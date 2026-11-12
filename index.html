@@ -1,0 +1,1366 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Quarry Direct | Floor &amp; Wall Tile Store Mississauga</title>
+<meta name="description" content="Whether you are looking for floor tiles or backsplashes, our tile store in Mississauga has them all. Porcelain, marble, travertine, mosaic, ledgestone and more at the Mississauga Home &amp; Design Centre.">
+<meta name="theme-color" content="#F3F3F1" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121214" media="(prefers-color-scheme: dark)">
+<meta property="og:title" content="Quarry Direct | Floor &amp; Wall Tile Store Mississauga">
+<meta property="og:description" content="Your go-to tile store in Mississauga since 2009.">
+<meta property="og:image" content="assets/hero.webp">
+<link rel="icon" href="assets/favicon.png">
+<link rel="preload" as="image" href="assets/hero.webp" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha384-g4NTh/Iv5PPU4xPyhEWqPcwtNXOvdaDI8LLnyYfyNZOjKJeYQyjzQ9X5275eBjpt" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha384-Z3REaz79l2IaAZqJsSABtTbhjgOUYyV3p90XNnAPCSHg3EMTz1fouunq9WZRtj3d" crossorigin="anonymous" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": "Quarry Direct Mississauga Inc.",
+  "telephone": "+1-905-820-7300",
+  "faxNumber": "+1-905-820-7308",
+  "email": "info@quarrydirect1.com",
+  "foundingDate": "2009",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "2575 Dundas Street West, Unit 16",
+    "addressLocality": "Mississauga",
+    "addressRegion": "ON",
+    "postalCode": "L5K 2M6",
+    "addressCountry": "CA"
+  },
+  "openingHoursSpecification": [
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "17:00"},
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "10:00", "closes": "15:00"}
+  ]
+}
+</script>
+<style>
+/* ---------- Tokens ---------- */
+:root {
+  --bg: #F3F3F1;
+  --surface: #FFFFFF;
+  --surface-2: #E8E8E5;
+  --ink: #151517;
+  --ink-2: #393A3E;
+  --muted: #5F6167;
+  --line: #D9D9D5;
+  --accent: #F9851B;          /* Quarry Direct orange, from their site */
+  --on-accent: #151517;
+  --accent-text: #9A4B00;     /* orange dark enough for text on light */
+  --chip: #FFFFFF;            /* logo + product tiles stay white in both themes */
+  --utility: #151517;
+  --utility-ink: #ECECE9;
+  --shadow: 0 24px 60px -30px rgba(21, 21, 23, .35);
+  --gutter: clamp(16px, 4vw, 48px);
+  --max: 1320px;
+  --header-h: 68px;
+  --ease: cubic-bezier(.16, 1, .3, 1);
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121214;
+    --surface: #1A1A1D;
+    --surface-2: #232327;
+    --ink: #F0F0EE;
+    --ink-2: #D2D2CF;
+    --muted: #A3A4A9;
+    --line: #2D2D32;
+    --accent-text: #FFA65A;
+    --chip: #F4F4F2;
+    --utility: #0A0A0B;
+    --utility-ink: #D9D9D6;
+    --shadow: 0 24px 60px -30px rgba(0, 0, 0, .7);
+    color-scheme: dark;
+  }
+}
+
+/* ---------- Base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: calc(var(--header-h) + 16px); }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Lato", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: clip;
+}
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+button { font: inherit; color: inherit; }
+h1, h2, h3, h4 { margin: 0; font-weight: 900; letter-spacing: -0.02em; line-height: 1.06; text-wrap: balance; }
+p { margin: 0; text-wrap: pretty; }
+ul { margin: 0; padding: 0; list-style: none; }
+.wrap { width: 100%; max-width: var(--max); margin-inline: auto; padding-inline: var(--gutter); }
+.sr-only { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.skip { position: absolute; left: 12px; top: -60px; z-index: 100; background: var(--ink); color: var(--bg); padding: 10px 14px; font-weight: 700; text-decoration: none; }
+.skip:focus { top: 12px; }
+
+.section { padding-block: clamp(80px, 10vw, 144px); }
+.h2 { font-size: clamp(2.1rem, 1.3rem + 2.6vw, 3.5rem); }
+.lede { color: var(--muted); max-width: 60ch; font-size: 1.06rem; }
+
+/* Buttons: square corners everywhere, like a tile edge */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  height: 50px; padding: 0 24px; border: 1px solid transparent; border-radius: 0;
+  font-weight: 700; font-size: 15px; letter-spacing: .01em; white-space: nowrap;
+  text-decoration: none; cursor: pointer; transition: transform .2s var(--ease), background-color .25s, color .25s, border-color .25s;
+}
+.btn:active { transform: translateY(1px); }
+.btn-primary { background: var(--accent); color: var(--on-accent); }
+.btn-primary:hover { background: #FF9737; }
+.btn-ghost { border-color: var(--ink); color: var(--ink); background: transparent; }
+.btn-ghost:hover { background: var(--ink); color: var(--bg); }
+.btn i { font-size: 18px; }
+.link {
+  font-weight: 700; text-decoration: none; color: var(--ink);
+  background: linear-gradient(var(--accent), var(--accent)) 0 100% / 100% 2px no-repeat;
+  padding-bottom: 2px; transition: background-size .3s var(--ease);
+}
+.link:hover { background-size: 100% 100%; color: var(--on-accent); }
+
+/* ---------- Utility bar ---------- */
+.utility { background: var(--utility); color: var(--utility-ink); font-size: 13.5px; }
+.utility .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 38px; }
+.utility p { display: flex; align-items: center; gap: 8px; }
+.utility i { color: var(--accent); font-size: 16px; }
+.utility a { color: var(--utility-ink); text-decoration: none; font-weight: 700; }
+.utility a:hover { color: var(--accent); }
+.utility .u-right { display: flex; gap: 22px; }
+@media (max-width: 760px) { .utility .u-right { display: none; } .utility .wrap { justify-content: center; } }
+
+/* ---------- Header ---------- */
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: color-mix(in srgb, var(--bg) 92%, transparent);
+  -webkit-backdrop-filter: saturate(160%) blur(14px); backdrop-filter: saturate(160%) blur(14px);
+  border-bottom: 1px solid transparent; transition: border-color .3s, box-shadow .3s;
+}
+.site-header.scrolled { border-bottom-color: var(--line); }
+.site-header .wrap { display: flex; align-items: center; gap: 28px; height: var(--header-h); }
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; flex-shrink: 0; }
+.brand img { width: 42px; height: 44px; object-fit: contain; }
+.brand b { display: block; font-weight: 900; font-size: 19px; letter-spacing: -0.01em; line-height: 1; }
+.brand small { display: block; font-size: 11.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-top: 4px; }
+.nav { display: flex; gap: 26px; margin-left: auto; }
+.nav a { text-decoration: none; font-weight: 700; font-size: 15px; color: var(--ink-2); position: relative; padding-block: 6px; }
+.nav a::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform .35s var(--ease); }
+.nav a:hover { color: var(--ink); }
+.nav a:hover::after { transform: scaleX(1); }
+.head-actions { display: flex; align-items: center; gap: 18px; }
+.phone { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; text-decoration: none; font-size: 15px; white-space: nowrap; }
+.phone i { font-size: 18px; color: var(--accent-text); }
+.head-actions .btn { height: 44px; padding: 0 20px; }
+.menu-btn { display: none; width: 44px; height: 44px; border: 1px solid var(--line); background: transparent; cursor: pointer; align-items: center; justify-content: center; font-size: 22px; }
+.mobile-nav { display: none; }
+@media (max-width: 1080px) {
+  .nav { display: none; }
+  .head-actions { margin-left: auto; }
+}
+@media (max-width: 760px) {
+  .head-actions .btn, .head-actions .phone span { display: none; }
+  .phone { width: 44px; height: 44px; justify-content: center; border: 1px solid var(--line); }
+  .menu-btn { display: inline-flex; }
+  .site-header .wrap { gap: 12px; }
+  .brand b { font-size: 17px; }
+}
+@media (min-width: 761px) and (max-width: 1080px) { .menu-btn { display: inline-flex; } }
+.mobile-nav.open {
+  display: block; border-top: 1px solid var(--line); background: var(--bg);
+  max-height: calc(100dvh - var(--header-h)); overflow-y: auto;
+}
+.mobile-nav ul { padding: 8px var(--gutter) 24px; }
+.mobile-nav a { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; border-bottom: 1px solid var(--line); text-decoration: none; font-weight: 900; font-size: 22px; letter-spacing: -0.01em; }
+.mobile-nav a i { color: var(--accent-text); font-size: 18px; }
+.mobile-nav a.btn { margin-top: 20px; width: 100%; justify-content: center; gap: 10px; padding: 0 20px; border-bottom: 0; font-size: 17px; }
+.mobile-nav a.btn i { color: var(--on-accent); }
+
+/* ---------- Hero ---------- */
+.hero { position: relative; }
+.hero-media {
+  position: relative; overflow: hidden; background: var(--surface-2);
+  height: clamp(560px, calc(100svh - var(--header-h) - 38px), 920px);
+}
+.hero-media > img {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 62%;
+  transform-origin: 50% 70%;
+}
+.hero-tiles { position: absolute; inset: 0; pointer-events: none; }
+.hero-tiles span { position: absolute; background-repeat: no-repeat; will-change: transform, opacity; }
+.hero-panel {
+  position: absolute; left: 0; bottom: 0; z-index: 2;
+  width: min(700px, 56%);
+  background: var(--bg);
+  padding: 44px 56px 52px var(--gutter);
+}
+.hero-panel h1 { font-size: clamp(2.5rem, 1.4rem + 3.2vw, 4.4rem); line-height: 1; letter-spacing: -0.03em; }
+.hero-panel p { margin-top: 22px; font-size: 1.15rem; color: var(--ink-2); max-width: 34ch; }
+.hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+@media (min-width: 1440px) { .hero-panel { padding-left: calc((100vw - var(--max)) / 2 + var(--gutter)); width: calc((100vw - var(--max)) / 2 + 700px); } }
+@media (max-width: 900px) {
+  .hero-media { height: 46svh; min-height: 300px; }
+  .hero-panel { position: relative; width: 100%; padding: 32px var(--gutter) 0; }
+  .hero-panel p { max-width: none; }
+}
+@media (max-width: 420px) { .hero-ctas .btn { flex: 1 1 100%; } }
+
+/* Quick facts under the hero */
+.facts { padding-top: clamp(48px, 6vw, 80px); }
+.facts ul { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); }
+.facts li { padding: 26px 24px 0 0; display: grid; grid-template-columns: auto 1fr; gap: 4px 14px; align-items: start; }
+.facts li + li { padding-left: 24px; border-left: 1px solid var(--line); }
+.facts i { grid-row: 1 / span 2; line-height: 1; font-size: 26px; color: var(--accent-text); margin-top: 2px; }
+.facts b { font-weight: 900; font-size: 17px; }
+.facts span { color: var(--muted); font-size: 15px; line-height: 1.5; }
+@media (max-width: 900px) {
+  .facts ul { grid-template-columns: 1fr 1fr; }
+  .facts li:nth-child(3) { border-left: 0; padding-left: 0; }
+  .facts li:nth-child(n+3) { margin-top: 8px; }
+}
+@media (max-width: 520px) {
+  .facts ul { grid-template-columns: 1fr; }
+  .facts li, .facts li + li { padding: 20px 0 0; border-left: 0; }
+}
+
+/* ---------- Intro statement ---------- */
+.intro .wrap { display: grid; grid-template-columns: minmax(0, 8fr) minmax(0, 4fr); gap: clamp(32px, 6vw, 96px); align-items: end; }
+.statement { font-size: clamp(1.7rem, 1.1rem + 1.9vw, 2.9rem); font-weight: 300; line-height: 1.22; letter-spacing: -0.015em; color: var(--muted); text-wrap: pretty; }
+.statement strong { font-weight: 900; color: var(--ink); }
+.intro-side p { color: var(--ink-2); }
+.intro-side p + p { margin-top: 14px; }
+.areas { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--line); }
+.areas h3 { font-size: 14px; letter-spacing: 0; font-weight: 700; color: var(--muted); }
+.areas ul { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.areas li { border: 1px solid var(--line); padding: 5px 11px; font-size: 14px; font-weight: 700; }
+@media (max-width: 900px) { .intro .wrap { grid-template-columns: 1fr; } }
+
+/* ---------- Material browser ---------- */
+.products { padding-top: 0; }
+.products-head { display: flex; flex-direction: column; gap: 16px; margin-bottom: clamp(32px, 4vw, 52px); }
+.browser { display: grid; grid-template-columns: 280px minmax(0, 1fr); gap: clamp(24px, 3vw, 48px); align-items: start; }
+.mat-list { display: flex; flex-direction: column; border-top: 1px solid var(--line); position: sticky; top: calc(var(--header-h) + 24px); }
+.mat-tab {
+  display: grid; grid-template-columns: 44px 1fr auto; align-items: center; gap: 14px;
+  width: 100%; padding: 10px 0; border: 0; border-bottom: 1px solid var(--line); background: none;
+  text-align: left; cursor: pointer; font-weight: 700; font-size: 16px; color: var(--ink-2); position: relative;
+}
+.mat-tab img { width: 44px; height: 44px; object-fit: cover; filter: grayscale(.6); transition: filter .3s; }
+.mat-tab i { color: var(--muted); opacity: 0; transform: translateX(-6px); transition: .3s var(--ease); }
+.mat-tab:hover { color: var(--ink); }
+.mat-tab:hover img, .mat-tab[aria-selected="true"] img { filter: none; }
+.mat-tab[aria-selected="true"] { color: var(--ink); font-weight: 900; }
+.mat-tab[aria-selected="true"] i { opacity: 1; transform: none; color: var(--accent-text); }
+.mat-tab::before { content: ""; position: absolute; left: -14px; top: 10px; bottom: 10px; width: 3px; background: var(--accent); transform: scaleY(0); transition: transform .35s var(--ease); }
+.mat-tab[aria-selected="true"]::before { transform: scaleY(1); }
+
+.mat-panel { min-width: 0; }
+.mat-top { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: clamp(24px, 3vw, 44px); }
+.mat-fig { position: relative; aspect-ratio: 4 / 4.4; overflow: hidden; background: var(--surface-2); margin: 0; }
+.mat-fig img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.mat-copy h3 { font-size: clamp(2rem, 1.4rem + 1.6vw, 3rem); }
+.mat-copy .desc { margin-top: 18px; color: var(--ink-2); }
+.mat-copy .desc p + p { margin-top: 12px; }
+.mat-copy h4 { margin-top: 26px; font-size: 14px; font-weight: 700; letter-spacing: 0; color: var(--muted); }
+.suits { margin-top: 10px; display: grid; gap: 8px; }
+.suits li { display: flex; gap: 10px; align-items: baseline; font-weight: 700; }
+.suits i { color: var(--accent-text); transform: translateY(2px); }
+.mat-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.assist { margin-top: 16px; font-size: 14.5px; color: var(--muted); max-width: 46ch; }
+
+.swatches-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin-top: clamp(32px, 4vw, 48px); padding-top: 18px; border-top: 1px solid var(--line); }
+.swatches-head h4 { font-size: 15px; font-weight: 900; letter-spacing: 0; }
+.req-status { font-size: 14.5px; color: var(--muted); min-height: 1.6em; }
+.req-status a { color: var(--accent-text); font-weight: 700; }
+.swatches { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 14px; margin-top: 16px; }
+.sw figure { margin: 0; aspect-ratio: 1; overflow: hidden; background: var(--chip); }
+.sw img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s var(--ease); }
+.sw:hover img { transform: scale(1.06); }
+.sw-name { display: block; margin-top: 8px; font-size: 13.5px; font-weight: 700; line-height: 1.3; min-height: 2.6em; }
+.sw-add {
+  margin-top: 6px; display: inline-flex; align-items: center; gap: 6px; padding: 6px 0;
+  border: 0; background: none; cursor: pointer; font-size: 13px; font-weight: 700; color: var(--accent-text);
+}
+.sw-add[aria-pressed="true"] { color: var(--ink); }
+.notes { margin-top: 28px; color: var(--muted); font-size: 14.5px; max-width: 80ch; }
+.notes p + p { margin-top: 8px; }
+.notes a { color: var(--ink); font-weight: 700; }
+
+@media (max-width: 1100px) { .swatches { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 1080px) { .mat-top { grid-template-columns: 1fr; } .mat-fig { aspect-ratio: 16 / 10; } }
+@media (max-width: 900px) {
+  .browser { grid-template-columns: 1fr; }
+  .mat-list {
+    position: static; flex-direction: row; overflow-x: auto; gap: 8px; border: 0;
+    scroll-snap-type: x proximity; scrollbar-width: none; margin-inline: calc(var(--gutter) * -1); padding-inline: var(--gutter);
+  }
+  .mat-list::-webkit-scrollbar { display: none; }
+  .mat-list li { flex: 0 0 auto; scroll-snap-align: start; }
+  .mat-tab { grid-template-columns: 30px auto; gap: 10px; padding: 7px 14px 7px 7px; border: 1px solid var(--line); font-size: 15px; }
+  .mat-tab img { width: 30px; height: 30px; }
+  .mat-tab i, .mat-tab::before { display: none; }
+  .mat-tab[aria-selected="true"] { border-color: var(--ink); background: var(--ink); color: var(--bg); }
+}
+@media (max-width: 520px) { .swatches { grid-template-columns: repeat(2, minmax(0, 1fr)); } .swatches-head { flex-direction: column; gap: 4px; } }
+
+/* ---------- Why Quarry (sticky photo) ---------- */
+.why { background: var(--surface); }
+.why-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 6vw, 96px); }
+.why-media { position: sticky; top: calc(var(--header-h) + 32px); height: calc(100svh - var(--header-h) - 64px); max-height: 760px; overflow: hidden; background: var(--surface-2); }
+.why-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.why-media img:not(:first-child) { clip-path: inset(100% 0 0 0); }
+.why-copy .h2 { margin-bottom: 8px; }
+.why-item { min-height: 62svh; display: flex; flex-direction: column; justify-content: center; padding-block: 40px; }
+.why-item h3 { font-size: clamp(1.6rem, 1.2rem + 1.2vw, 2.3rem); transition: color .5s; }
+.why-item p { margin-top: 16px; color: var(--ink-2); max-width: 52ch; transition: color .5s; }
+.why-item p + p { margin-top: 12px; }
+.js .why-item:not(.active) h3 { color: color-mix(in srgb, var(--ink) 35%, var(--surface)); }
+.js .why-item:not(.active) p { color: color-mix(in srgb, var(--ink-2) 40%, var(--surface)); }
+.why-item .inline-img { display: none; }
+.why-item .link { align-self: flex-start; margin-top: 22px; }
+.why-copy a.mat-jump { color: inherit; font-weight: 700; text-decoration-color: var(--accent); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+@media (max-width: 900px) {
+  .why-grid { grid-template-columns: 1fr; }
+  .why-media { display: none; }
+  .why-item { min-height: 0; padding-block: 28px; }
+  .why-item .inline-img { display: block; aspect-ratio: 16 / 10; object-fit: cover; width: 100%; margin-bottom: 22px; }
+  .js .why-item:not(.active) h3, .js .why-item:not(.active) p { color: inherit; }
+}
+
+/* ---------- Projects (parallax masonry) ---------- */
+.projects { overflow: clip; }
+.projects-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; flex-wrap: wrap; }
+.masonry { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(12px, 1.6vw, 22px); margin-top: clamp(48px, 6vw, 88px); align-items: start; }
+.masonry .col { display: grid; gap: clamp(12px, 1.6vw, 22px); }
+.masonry .col:nth-child(2) { margin-top: 90px; }
+.masonry .col:nth-child(3) { margin-top: 30px; }
+.masonry figure { margin: 0; overflow: hidden; background: var(--surface-2); }
+.masonry img { width: 100%; height: auto; transition: transform .8s var(--ease); }
+.masonry figure:hover img { transform: scale(1.04); }
+@media (max-width: 760px) {
+  .masonry { grid-template-columns: 1fr 1fr; }
+  .masonry .col:nth-child(2) { margin-top: 40px; }
+  .masonry .col:nth-child(3) { display: contents; }
+}
+
+/* ---------- Sale ---------- */
+.sale { background: var(--surface); }
+.sale-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: clamp(14px, 1.8vw, 24px); margin-top: clamp(36px, 4vw, 56px); }
+.deal { display: flex; flex-direction: column; background: var(--bg); }
+.deal:nth-child(1) { grid-column: span 6; grid-row: span 2; }
+.deal:nth-child(n+2) { grid-column: span 3; }
+.deal figure { margin: 0; background: var(--chip); aspect-ratio: 1; display: grid; place-items: center; overflow: hidden; }
+.deal:nth-child(1) figure { aspect-ratio: auto; flex: 1; min-height: 360px; }
+.deal figure img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s var(--ease); }
+.deal:hover figure img { transform: scale(1.04); }
+.deal figure.cut img { width: 72%; height: 82%; object-fit: contain; }
+.deal-body { padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 6px; flex: 0 0 auto; }
+.deal h3 { font-size: 16px; font-weight: 700; letter-spacing: 0; line-height: 1.35; }
+.deal:nth-child(1) h3 { font-size: clamp(1.3rem, 1rem + .8vw, 1.8rem); font-weight: 900; letter-spacing: -0.01em; }
+.price { display: flex; align-items: baseline; gap: 10px; margin-top: 2px; }
+.price small { font-size: 13px; color: var(--muted); font-weight: 700; }
+.price b { font-size: 24px; font-weight: 900; letter-spacing: -0.02em; }
+.deal:nth-child(1) .price b { font-size: 40px; }
+.deal .link { align-self: flex-start; margin-top: 8px; font-size: 14.5px; }
+@media (max-width: 1000px) {
+  .deal:nth-child(1) { grid-column: 1 / -1; grid-row: auto; }
+  .deal:nth-child(1) figure { min-height: 0; aspect-ratio: 16 / 10; flex: none; }
+  .deal:nth-child(n+2) { grid-column: span 6; }
+}
+@media (max-width: 520px) { .deal:nth-child(n+2) { grid-column: span 12; } .deal:nth-child(n+2) figure { aspect-ratio: 16 / 11; } }
+
+/* ---------- Other products ---------- */
+.other-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(32px, 5vw, 80px); margin-top: clamp(36px, 4vw, 56px); align-items: start; }
+.schluter figure { margin: 0; overflow: hidden; aspect-ratio: 3 / 2; background: var(--surface-2); }
+.schluter figure img { width: 100%; height: 100%; object-fit: cover; }
+.schluter h3 { margin-top: 24px; font-size: clamp(1.5rem, 1.2rem + .9vw, 2rem); }
+.schluter p { margin-top: 12px; color: var(--ink-2); }
+.schluter h4 { margin-top: 20px; font-size: 14px; letter-spacing: 0; font-weight: 700; color: var(--muted); }
+.pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.pills li { border: 1px solid var(--line); padding: 6px 12px; font-size: 14px; font-weight: 700; }
+.supplies { display: grid; gap: clamp(28px, 3vw, 40px); }
+.supply h3 { font-size: 20px; letter-spacing: -0.01em; padding-bottom: 12px; border-bottom: 2px solid var(--ink); }
+.supply ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 32px; margin-top: 16px; }
+.supply li b { display: block; font-weight: 900; font-size: 15.5px; line-height: 1.3; }
+.supply li span { display: block; margin-top: 4px; color: var(--muted); font-size: 14.5px; line-height: 1.5; }
+.supply.wide ul { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 1000px) { .other-grid { grid-template-columns: 1fr; } }
+@media (max-width: 620px) { .supply ul, .supply.wide ul { grid-template-columns: 1fr; } }
+
+/* ---------- Reviews ---------- */
+.reviews .wrap { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: clamp(32px, 5vw, 72px); align-items: start; }
+.score { position: sticky; top: calc(var(--header-h) + 32px); }
+.score-num { display: flex; align-items: baseline; gap: 14px; margin-top: 28px; }
+.score-num b { font-size: clamp(4rem, 3rem + 3vw, 6rem); font-weight: 900; letter-spacing: -0.04em; line-height: .9; }
+.score-num span { font-weight: 900; font-size: 18px; letter-spacing: .08em; }
+.stars { display: flex; gap: 2px; color: var(--accent); font-size: 20px; margin-top: 12px; }
+.score p { margin-top: 10px; color: var(--muted); }
+.score .link { display: inline-block; margin-top: 22px; }
+.quotes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(14px, 1.6vw, 22px); }
+.quote { margin: 0; background: var(--surface); padding: clamp(22px, 2.4vw, 32px); display: flex; flex-direction: column; gap: 18px; }
+.quote:nth-child(3n+1) { grid-column: span 2; }
+.quote .stars { font-size: 15px; margin: 0; }
+.quote blockquote { margin: 0; font-size: 1.05rem; line-height: 1.55; color: var(--ink); }
+.quote:nth-child(3n+1) blockquote { font-size: clamp(1.2rem, 1rem + .6vw, 1.5rem); font-weight: 300; line-height: 1.4; letter-spacing: -0.01em; }
+.quote figcaption { margin-top: auto; font-size: 14.5px; }
+.quote figcaption b { display: block; font-weight: 900; }
+.quote figcaption span { color: var(--muted); }
+@media (max-width: 900px) {
+  .reviews .wrap { grid-template-columns: 1fr; }
+  .score { position: static; }
+}
+@media (max-width: 620px) { .quotes { grid-template-columns: 1fr; } .quote:nth-child(3n+1) { grid-column: auto; } }
+
+/* ---------- Suppliers ---------- */
+.suppliers { padding-top: 0; padding-bottom: clamp(72px, 8vw, 112px); }
+.suppliers h2 { font-size: 15px; letter-spacing: 0; font-weight: 700; color: var(--muted); text-align: center; }
+.logos { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 12px; margin-top: 22px; }
+.logos li { background: var(--chip); height: 96px; display: grid; place-items: center; padding: 18px; }
+.logos img { max-height: 46px; width: auto; max-width: 100%; object-fit: contain; filter: grayscale(1); opacity: .8; transition: filter .35s, opacity .35s; }
+.logos li:hover img { filter: none; opacity: 1; }
+@media (max-width: 1000px) { .logos { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .logos { grid-template-columns: repeat(2, minmax(0, 1fr)); } .logos li:last-child { grid-column: span 2; } }
+
+/* ---------- FAQ ---------- */
+.faq { background: var(--surface); }
+.faq .wrap { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: clamp(32px, 5vw, 72px); align-items: start; }
+.faq-side p { margin-top: 18px; color: var(--muted); max-width: 36ch; }
+.faq-side .phone-big { display: inline-flex; align-items: center; gap: 10px; margin-top: 18px; font-weight: 900; font-size: 22px; text-decoration: none; }
+.faq-side .phone-big i { color: var(--accent-text); }
+.qa { border-top: 1px solid var(--line); }
+.qa:last-child { border-bottom: 1px solid var(--line); }
+.qa summary {
+  list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 24px;
+  padding: 22px 0; font-weight: 900; font-size: clamp(1.05rem, .95rem + .4vw, 1.3rem); letter-spacing: -0.01em;
+}
+.qa summary::-webkit-details-marker { display: none; }
+.qa summary i { flex-shrink: 0; width: 36px; height: 36px; display: grid; place-items: center; border: 1px solid var(--line); transition: transform .4s var(--ease), background-color .3s, border-color .3s; }
+.qa[open] summary i { transform: rotate(45deg); background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.qa .answer { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .45s var(--ease); }
+.qa .answer > div { overflow: hidden; }
+.qa .answer p { padding-bottom: 24px; color: var(--ink-2); max-width: 66ch; }
+.qa.is-open .answer { grid-template-rows: 1fr; }
+@media (max-width: 900px) { .faq .wrap { grid-template-columns: 1fr; } }
+
+/* ---------- Visit / contact ---------- */
+.visit { padding-bottom: 0; }
+.visit-grid { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 6fr); gap: clamp(32px, 5vw, 80px); margin-top: clamp(32px, 4vw, 52px); align-items: start; }
+.visit-intro { color: var(--ink-2); max-width: 58ch; }
+.visit-intro p + p { margin-top: 12px; }
+.details { display: grid; grid-template-columns: 1fr 1fr; gap: 28px 32px; margin-top: 36px; padding-top: 28px; border-top: 1px solid var(--line); }
+.details h3 { font-size: 14px; letter-spacing: 0; font-weight: 700; color: var(--muted); margin-bottom: 8px; }
+.details address { font-style: normal; font-weight: 700; line-height: 1.5; }
+.details a { text-decoration: none; font-weight: 700; }
+.details a:hover { color: var(--accent-text); }
+.details .lines { display: grid; gap: 4px; }
+.details .lines span { color: var(--muted); font-weight: 400; }
+.hours { width: 100%; border-collapse: collapse; }
+.hours td { padding: 6px 0; border-bottom: 1px solid var(--line); font-size: 15.5px; }
+.hours td:last-child { text-align: right; font-weight: 700; }
+.hours tr.today td { color: var(--ink); font-weight: 900; }
+.hours tr.today td:first-child::after { content: " (today)"; font-weight: 400; color: var(--muted); }
+.open-state { display: inline-flex; align-items: center; gap: 8px; margin-top: 12px; font-weight: 700; font-size: 15px; }
+.open-state i { font-size: 18px; }
+.open-state.is-open i { color: #2F9E55; }
+.open-state.is-closed i { color: var(--muted); }
+.socials { display: flex; gap: 10px; margin-top: 4px; }
+.socials a { width: 42px; height: 42px; display: grid; place-items: center; border: 1px solid var(--line); font-size: 20px; transition: background-color .3s, color .3s, border-color .3s; }
+.socials a:hover { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.details .span2 { grid-column: span 2; }
+
+.form { background: var(--surface); padding: clamp(24px, 3vw, 40px); }
+.form h3 { font-size: clamp(1.5rem, 1.2rem + .9vw, 2rem); }
+.form .assist { margin-top: 8px; }
+.field { display: grid; gap: 8px; margin-top: 18px; align-content: start; }
+.field label { font-weight: 700; font-size: 14.5px; }
+.field input, .field textarea {
+  width: 100%; border: 1px solid var(--line); background: var(--bg); color: var(--ink);
+  padding: 13px 14px; font: inherit; font-size: 16px; border-radius: 0; transition: border-color .2s;
+}
+.field textarea { min-height: 120px; resize: vertical; }
+.field input:focus, .field textarea:focus { outline: none; border-color: var(--ink); box-shadow: 0 0 0 1px var(--ink); }
+.field .help { font-size: 13.5px; color: var(--muted); }
+.field .err { font-size: 13.5px; color: #C2410C; font-weight: 700; display: none; }
+.field.invalid input { border-color: #C2410C; }
+.field.invalid .err { display: block; }
+.row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0 16px; }
+.req-box { margin-top: 18px; padding: 14px; border: 1px dashed var(--line); }
+.req-box b { font-size: 14.5px; }
+.req-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.req-chips li { display: inline-flex; align-items: center; gap: 6px; background: var(--bg); border: 1px solid var(--line); padding: 4px 6px 4px 10px; font-size: 13.5px; font-weight: 700; }
+.req-chips button { border: 0; background: none; cursor: pointer; width: 26px; height: 26px; display: grid; place-items: center; color: var(--muted); }
+.req-chips button:hover { color: var(--ink); }
+.req-empty { font-size: 14px; color: var(--muted); margin-top: 6px; }
+.form .btn { margin-top: 22px; width: 100%; }
+.form-done { margin-top: 14px; font-size: 14.5px; color: var(--ink-2); display: none; }
+.form-done.show { display: block; }
+.map { margin-top: clamp(48px, 6vw, 80px); height: clamp(320px, 38vw, 460px); background: var(--surface-2); }
+.map iframe { width: 100%; height: 100%; border: 0; filter: grayscale(1) contrast(1.05); }
+@media (prefers-color-scheme: dark) { .map iframe { filter: grayscale(1) invert(.9) contrast(.9); } }
+@media (max-width: 1000px) { .visit-grid { grid-template-columns: 1fr; } }
+@media (max-width: 520px) { .details { grid-template-columns: 1fr; } .details .span2 { grid-column: auto; } .row2 { grid-template-columns: 1fr; } }
+
+/* ---------- Footer ---------- */
+.footer { border-top: 1px solid var(--line); padding-block: clamp(48px, 6vw, 72px) 28px; }
+.footer-grid { display: grid; grid-template-columns: minmax(0, 5fr) repeat(3, minmax(0, 2fr)); gap: 32px; }
+.footer .brand { margin-bottom: 18px; }
+.footer .hst { display: flex; align-items: center; gap: 10px; font-weight: 900; font-size: 18px; letter-spacing: -0.01em; }
+.footer .hst i { color: var(--accent-text); font-size: 24px; }
+.footer p { color: var(--muted); font-size: 15px; margin-top: 10px; max-width: 42ch; }
+.footer h3 { font-size: 14px; letter-spacing: 0; font-weight: 700; color: var(--muted); margin-bottom: 12px; }
+.footer li a { text-decoration: none; display: inline-block; padding: 4px 0; font-weight: 700; font-size: 15px; }
+.footer li a:hover { color: var(--accent-text); }
+.footer-bottom { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--line); font-size: 13.5px; color: var(--muted); }
+@media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr 1fr; } .footer-grid > :first-child { grid-column: span 2; } }
+
+/* ---------- Reveal ---------- */
+.js .rv { opacity: 0; transform: translateY(26px); transition: opacity .9s var(--ease), transform .9s var(--ease); transition-delay: var(--d, 0s); }
+.js .rv.in { opacity: 1; transform: none; }
+.js .hero-panel > * { opacity: 0; transform: translateY(18px); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; scroll-behavior: auto !important; }
+  .js .rv, .js .hero-panel > * { opacity: 1; transform: none; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="utility">
+  <div class="wrap">
+    <p><i class="ph ph-seal-percent" aria-hidden="true"></i><span>No HSTs. We pay the HST for you!</span></p>
+    <div class="u-right">
+      <a href="#sale">Sale on Premium Toilets &amp; Bathtubs</a>
+      <a href="#visit">Mon-Fri 9 am-5 pm, Sat 10 am-3 pm</a>
+    </div>
+  </div>
+</div>
+
+<header class="site-header" id="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Quarry Direct Mississauga, home">
+      <img src="assets/logo.png" alt="" width="42" height="44">
+      <span><b>Quarry Direct</b><small>Mississauga</small></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#products">Products</a>
+      <a href="#why">About Us</a>
+      <a href="#projects">Projects</a>
+      <a href="#sale">Sale</a>
+      <a href="#faq">FAQ</a>
+      <a href="#visit">Contact</a>
+    </nav>
+    <div class="head-actions">
+      <a class="phone" href="tel:+19058207300" aria-label="Call (905) 820 7300"><i class="ph ph-phone" aria-hidden="true"></i><span>(905) 820 7300</span></a>
+      <a class="btn btn-primary" href="#visit">Contact Us</a>
+      <button class="menu-btn" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu"><i class="ph ph-list" aria-hidden="true"></i></button>
+    </div>
+  </div>
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile">
+    <ul>
+      <li><a href="#products">Products <i class="ph ph-arrow-right"></i></a></li>
+      <li><a href="#why">About Us <i class="ph ph-arrow-right"></i></a></li>
+      <li><a href="#projects">Projects <i class="ph ph-arrow-right"></i></a></li>
+      <li><a href="#sale">Sale <i class="ph ph-arrow-right"></i></a></li>
+      <li><a href="#faq">FAQ <i class="ph ph-arrow-right"></i></a></li>
+      <li><a href="#visit">Contact <i class="ph ph-arrow-right"></i></a></li>
+      <li><a class="btn btn-primary" href="tel:+19058207300"><i class="ph ph-phone"></i>(905) 820 7300</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- Hero -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-media">
+      <img src="assets/hero.webp" alt="Terrazzo-look porcelain laid in a black and cream checkerboard through an arched hallway" width="1600" height="1334" fetchpriority="high">
+      <div class="hero-tiles" aria-hidden="true"></div>
+    </div>
+    <div class="hero-panel">
+      <h1 id="hero-title">Your go-to tile store in Mississauga</h1>
+      <p>Get your house the most glimmering floor, wall and bathroom tiles Mississauga has to offer.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="#products">Browse products <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+        <a class="btn btn-ghost" href="#visit">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick facts -->
+  <section class="facts" aria-label="At a glance">
+    <div class="wrap">
+      <ul>
+        <li class="rv"><i class="ph ph-calendar-check" aria-hidden="true"></i><b>Since 2009</b><span>Serving the GTA with pride.</span></li>
+        <li class="rv" style="--d:.06s"><i class="ph ph-house-line" aria-hidden="true"></i><b>Family owned</b><span>A small, family owned business.</span></li>
+        <li class="rv" style="--d:.12s"><i class="ph ph-warehouse" aria-hidden="true"></i><b>In stock</b><span>Everything in our showroom is in stock or in nearby warehouses.</span></li>
+        <li class="rv" style="--d:.18s"><i class="ph ph-receipt-x" aria-hidden="true"></i><b>No HSTs</b><span>We pay the HST for you!</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Intro -->
+  <section class="section intro" aria-label="About Quarry Direct">
+    <div class="wrap">
+      <p class="statement rv"><strong>Since 2009, Quarry Direct has been the go-to choice</strong> for homeowners seeking high-quality tiles to transform their living spaces. Based in Mississauga, we pair <strong>deep industry expertise</strong> with an <strong>unmatched selection</strong>, all at prices that suit your budget.</p>
+      <div class="intro-side rv" style="--d:.1s">
+        <p>Our sales and design staff understand that home improvements can be stressful, which is why our goal is to make those hard decisions a little less difficult.</p>
+        <p>We love working with our customers and their designs to ensure that their projects not only look amazing but most importantly, stay on budget!</p>
+        <div class="areas">
+          <h3>Proudly serving clients from</h3>
+          <ul>
+            <li>Erin Mills</li><li>Meadowvale</li><li>Port Credit</li><li>Streetsville</li><li>Oakville</li><li>Toronto</li><li>Brampton</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section class="section products" id="products" aria-labelledby="products-title">
+    <div class="wrap">
+      <div class="products-head">
+        <h2 class="h2 rv" id="products-title">What Are You Looking For?</h2>
+        <p class="lede rv" style="--d:.06s">Quarry Direct Mississauga offers a vast collection of tiles and mosaics that fit your personal style. Tell us how we can help you accommodate your vision.</p>
+      </div>
+      <div class="browser rv" style="--d:.1s">
+        <ul class="mat-list" role="tablist" aria-label="Materials"></ul>
+        <div class="mat-panel" id="mat-panel" role="tabpanel" tabindex="0"></div>
+      </div>
+      <div class="notes">
+        <p>*Please note that we have a limited amount of products on our website. For the full selection of our premium tiles, please visit our showroom.</p>
+        <p>If you don't see what you are looking for, you can view more tiles from our suppliers <a href="https://www.msisurfaces.com/" target="_blank" rel="noopener">MSI International</a> and <a href="https://www.midgleywest.com/" target="_blank" rel="noopener">Midgley West</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Quarry -->
+  <section class="section why" id="why" aria-labelledby="why-title">
+    <div class="wrap why-grid">
+      <div class="why-media" aria-hidden="true">
+        <img src="assets/why/why-1.webp" alt="" width="1400" height="788" loading="lazy">
+        <img src="assets/why/why-2.webp" alt="" width="1400" height="1050" loading="lazy">
+        <img src="assets/why/why-3.webp" alt="" width="1400" height="1400" loading="lazy">
+        <img src="assets/why/why-4.webp" alt="" width="1400" height="979" loading="lazy">
+        <img src="assets/why/why-5.webp" alt="" width="1400" height="1400" loading="lazy">
+      </div>
+      <div class="why-copy">
+        <h2 class="h2 rv" id="why-title">Why Quarry?</h2>
+        <article class="why-item active">
+          <img class="inline-img" src="assets/why/why-1.webp" alt="Blue marble-look porcelain floor and feature wall in a living room" loading="lazy" width="1400" height="788">
+          <h3>Local &amp; Family-Owned</h3>
+          <p>Our tile store is a family-owned business that has been proudly serving customers since 2009. We cater to clients across Mississauga, the Greater Toronto Area (GTA), Halton Region, and extend our services to areas as far as Niagara, Kitchener, Owen Sound, Tiny, and Bancroft.</p>
+          <p>We are committed to offering a wide range of tiles and materials, ensuring that we meet the diverse needs of our customers, no matter the location.</p>
+        </article>
+        <article class="why-item">
+          <img class="inline-img" src="assets/why/why-2.webp" alt="Large porcelain slabs on the floor and walls of an open living space" loading="lazy" width="1400" height="1050">
+          <h3>Trusted providers of high-quality tiles in Mississauga</h3>
+          <p>When homeowners seek premium tiles to elevate the aesthetic of their home, they turn to Quarry Direct.</p>
+          <p>As a trusted provider of high-quality tiles in Mississauga since 2009, we combine expert knowledge with a vast selection of products, all at competitive prices.</p>
+        </article>
+        <article class="why-item">
+          <img class="inline-img" src="assets/why/why-3.webp" alt="Glass mosaic backsplash in blue and grey" loading="lazy" width="1400" height="1400">
+          <h3>All The Tile You Can Get</h3>
+          <p>Carefully handpicked by our expert staff, we offer an endless range of tile options made with top-notch materials.</p>
+          <p>From <a class="mat-jump" href="#products" data-mat="porcelain">porcelain</a> and <a class="mat-jump" href="#products" data-mat="marble">marble</a> to <a class="mat-jump" href="#products" data-mat="travertine">natural stone</a> and even <a class="mat-jump" href="#products" data-mat="medallion">medallion</a>, there's an option here for everyone at Quarry Direct.</p>
+        </article>
+        <article class="why-item">
+          <img class="inline-img" src="assets/why/why-4.webp" alt="Grey stone-look porcelain on the floor and walls of a modern room" loading="lazy" width="1400" height="979">
+          <h3>Friendly &amp; Customer-first approach</h3>
+          <p>We value your time and the trust you place in us for your home renovation needs.</p>
+          <p>That's why we uphold a customer-first approach, with our dedicated and friendly team ready to assist you at every step of your project.</p>
+        </article>
+        <article class="why-item">
+          <img class="inline-img" src="assets/why/why-5.webp" alt="Glossy blue subway tile wall behind a lounge chair" loading="lazy" width="1400" height="1400">
+          <h3>Premium quality and Affordability</h3>
+          <p>Transform your home with beauty, warmth, and functionality, without exceeding your budget.</p>
+          <p>Our curated selection of premium-quality tiles is always offered at competitive prices, ensuring that your home improvement experience is both rewarding and hassle-free.</p>
+          <a class="link" href="#visit">Contact Us</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section class="section projects" id="projects" aria-labelledby="projects-title">
+    <div class="wrap">
+      <div class="projects-head">
+        <h2 class="h2 rv" id="projects-title">Projects</h2>
+        <a class="link rv" href="https://www.instagram.com/quarrydirectmississauga/" target="_blank" rel="noopener">Follow on Instagram</a>
+      </div>
+      <div class="masonry">
+        <div class="col" data-speed="-1">
+          <figure><img src="assets/projects/p01.webp" width="900" height="1200" loading="lazy" alt="Bathroom with large grey wall tile, floating walnut vanity and pebble mirror"></figure>
+          <figure><img src="assets/projects/p04.webp" width="900" height="1202" loading="lazy" alt="White marble-look tub surround with a tall window"></figure>
+          <figure><img src="assets/projects/p07.webp" width="900" height="1600" loading="lazy" alt="Shower with large white marble-look porcelain and a recessed niche"></figure>
+          <figure><img src="assets/projects/p10.webp" width="500" height="889" loading="lazy" alt="Shower with grey plank tile and a rain head"></figure>
+        </div>
+        <div class="col" data-speed="1">
+          <figure><img src="assets/projects/p05.webp" width="900" height="1200" loading="lazy" alt="Powder room in grey tile with a walnut vanity"></figure>
+          <figure><img src="assets/projects/p08.webp" width="500" height="888" loading="lazy" alt="Shower with mosaic accent band, project completed by MIREK Tiles and Bathroom"></figure>
+          <figure><img src="assets/projects/p11.webp" width="900" height="900" loading="lazy" alt="Stone freestanding tub in front of a grey ledgestone wall"></figure>
+        </div>
+        <div class="col" data-speed="-.5">
+          <figure><img src="assets/projects/p03.webp" width="768" height="1024" loading="lazy" alt="Glass shower with Aria Bianco marble-look porcelain"></figure>
+          <figure><img src="assets/projects/p06.webp" width="500" height="889" loading="lazy" alt="Bright bathroom with glass shower and freestanding tub"></figure>
+          <figure><img src="assets/projects/p09.webp" width="500" height="667" loading="lazy" alt="Aria Bianco marble-look bathroom with dark vanity"></figure>
+          <figure><img src="assets/projects/p12.webp" width="500" height="667" loading="lazy" alt="Bathroom with mosaic border and freestanding tub, project completed by MIREK Tiles and Bathroom"></figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sale -->
+  <section class="section sale" id="sale" aria-labelledby="sale-title">
+    <div class="wrap">
+      <h2 class="h2 rv" id="sale-title">Sale on Premium Products</h2>
+      <div class="sale-grid">
+        <article class="deal rv">
+          <figure><img src="assets/sale/iq.webp" width="700" height="981" loading="lazy" alt="Aktuell Smart Toilet IQ"></figure>
+          <div class="deal-body">
+            <h3>Aktuell Smart Toilet IQ</h3>
+            <div class="price"><small>Sale price</small><b>$998</b></div>
+            <a class="link" href="#visit" data-req="Sale: Aktuell Smart Toilet IQ">Request info</a>
+          </div>
+        </article>
+        <article class="deal rv" style="--d:.05s">
+          <figure class="cut"><img src="assets/sale/cyklon.webp" width="700" height="1039" loading="lazy" alt="Cyklon 1 one-piece luxury toilet"></figure>
+          <div class="deal-body">
+            <h3>Cyklon 1: One-piece Luxury Toilet</h3>
+            <div class="price"><small>Sale price</small><b>$350</b></div>
+            <a class="link" href="#visit" data-req="Sale: Cyklon 1 One-piece Luxury Toilet">Request info</a>
+          </div>
+        </article>
+        <article class="deal rv" style="--d:.1s">
+          <figure><img src="assets/sale/onepiece.webp" width="700" height="681" loading="lazy" alt="Black one-piece luxury toilet"></figure>
+          <div class="deal-body">
+            <h3>One-Piece Luxury Toilets</h3>
+            <div class="price"><small>Sale price</small><b>$350</b></div>
+            <a class="link" href="#visit" data-req="Sale: One-Piece Luxury Toilets">Request info</a>
+          </div>
+        </article>
+        <article class="deal rv" style="--d:.05s">
+          <figure><img src="assets/sale/tub1.webp" width="700" height="866" loading="lazy" alt="White freestanding bathtub against a wall"></figure>
+          <div class="deal-body">
+            <h3>Freestanding Bathtubs #1</h3>
+            <div class="price"><small>Sale price</small><b>$350</b></div>
+            <a class="link" href="#visit" data-req="Sale: Freestanding Bathtubs #1">Request info</a>
+          </div>
+        </article>
+        <article class="deal rv" style="--d:.1s">
+          <figure><img src="assets/sale/tub2.webp" width="700" height="601" loading="lazy" alt="Oval white freestanding bathtub"></figure>
+          <div class="deal-body">
+            <h3>Freestanding Bathtubs #2</h3>
+            <div class="price"><small>Sale price</small><b>$900</b></div>
+            <a class="link" href="#visit" data-req="Sale: Freestanding Bathtubs #2">Request info</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Other products -->
+  <section class="section other" id="supplies" aria-labelledby="other-title">
+    <div class="wrap">
+      <h2 class="h2 rv" id="other-title">Other Products</h2>
+      <div class="other-grid">
+        <div class="schluter rv">
+          <figure><img src="assets/schluter.webp" width="1200" height="800" loading="lazy" alt="Schluter tile edging profile on a floor and wall corner"></figure>
+          <h3>Schluter Systems</h3>
+          <p>We are an authorized dealer of Schluter Installation systems. Everything from heated floors, Ditra, Kerdi, tile edgings, linear drains and much more.</p>
+          <h4>Products we sell</h4>
+          <ul class="pills"><li>Kerdi Shower Kits</li><li>Kerdi Line Drain</li><li>Kerdi Boards</li><li>Ditra</li><li>Ditra Heat</li></ul>
+        </div>
+        <div class="supplies">
+          <div class="supply rv">
+            <h3>Grout</h3>
+            <ul>
+              <li><b>Mapei Keracolor Sanded</b><span>Premium sanded grout with polymer. It will grout joints from 1/8″ to 5/8″ (3 to 16 mm).</span></li>
+              <li><b>Mapei Keracolor Unsanded</b><span>Premium unsanded grout with polymer. It will grout joints from 1/16″ to 1/8″ (1.5 to 3 mm).</span></li>
+              <li><b>Ultracolor Plus FA</b><span>Rapid-setting, "all-in-one" grout for joint widths from 1/16″ to 3/4″ (1.5 to 19 mm).</span></li>
+              <li><b>Leveling System</b><span>Developed to bring a perfect installation for all surfaces covered with tiles. Also prevents tiles from warping as your thin set cures.</span></li>
+            </ul>
+          </div>
+          <div class="supply rv">
+            <h3>Mortar &amp; Adhesives</h3>
+            <ul>
+              <li><b>Mapei Ultraflex 1</b><span>Standard tile mortar with polymer for most interior and exterior installations of tile.</span></li>
+              <li><b>Mapei Ultraflex 2</b><span>Professional tile mortar with polymer for ceramic, porcelain and dimensional natural-stone tile.</span></li>
+              <li><b>Mapei Ultraflex LFT</b><span>Premium, large-format tile mortar with polymer for large-format and heavy tile and stone.</span></li>
+            </ul>
+          </div>
+          <div class="supply wide rv">
+            <h3>Also at the showroom</h3>
+            <ul>
+              <li><b>NextStone</b><span>The timeless elegance of natural ledgestone and stacked stone at a fraction of the cost.</span></li>
+              <li><b>Quarry Tiles</b><span>Unglazed ceramic tiles made from natural clay and shale, fired at extremely high temperatures.</span></li>
+              <li><b>Vents</b><span>Vent tiles are essential for proper ventilation and temperature control in your home.</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="section reviews" id="reviews" aria-labelledby="reviews-title">
+    <div class="wrap">
+      <div class="score">
+        <h2 class="h2 rv" id="reviews-title">What Is Mississauga Really Saying?</h2>
+        <div class="rv" style="--d:.08s">
+          <div class="score-num"><b>4.5</b><span>EXCELLENT</span></div>
+          <div class="stars" aria-label="4.5 out of 5 stars"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star-half"></i></div>
+          <p>Based on 74 reviews on Google.</p>
+          <a class="link" href="https://maps.app.goo.gl/by7XKHq4JTzVc5RN7" target="_blank" rel="noopener">Leave a review on Google</a>
+        </div>
+      </div>
+      <div class="quotes">
+        <figure class="quote rv">
+          <div class="stars" aria-hidden="true"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
+          <blockquote>“I have been a designer for many years, I deal only with Quarry direct, if they don't have it they source it.”</blockquote>
+          <figcaption><b>Jane Robbins</b><span>Designer, Google review</span></figcaption>
+        </figure>
+        <figure class="quote rv">
+          <div class="stars" aria-hidden="true"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
+          <blockquote>“Great experience. Barb and her team were so helpful. Fair pricing.”</blockquote>
+          <figcaption><b>Matthew Wing</b><span>Google review</span></figcaption>
+        </figure>
+        <figure class="quote rv" style="--d:.06s">
+          <div class="stars" aria-hidden="true"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
+          <blockquote>“I had sent her inspirational photos and she picked the perfect backsplash tile for me! It's turned out amazing and really transformed my small kitchen space.”</blockquote>
+          <figcaption><b>Michalina Szulc</b><span>Google review</span></figcaption>
+        </figure>
+        <figure class="quote rv">
+          <div class="stars" aria-hidden="true"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
+          <blockquote>“As a general contractor I am reliant on suppliers for their expertise. Duriq and family provide top level service, a large showcase, and technical knowledge to support our business.”</blockquote>
+          <figcaption><b>Samantha B</b><span>Arclight Construction, Google review</span></figcaption>
+        </figure>
+        <figure class="quote rv">
+          <div class="stars" aria-hidden="true"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
+          <blockquote>“Barb spent the time to assist in every detail and I'm absolutely thrilled with the finished product! Pricing and delivery all good.”</blockquote>
+          <figcaption><b>Scott Paisley</b><span>Google review</span></figcaption>
+        </figure>
+        <figure class="quote rv" style="--d:.06s">
+          <div class="stars" aria-hidden="true"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
+          <blockquote>“Great service, Barbara was so helpful and patient and helped us find what we need.”</blockquote>
+          <figcaption><b>Sandy Diab Mutlak</b><span>Google review</span></figcaption>
+        </figure>
+        <figure class="quote rv">
+          <div class="stars" aria-hidden="true"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
+          <blockquote>“I have been purchasing all of my tiles and tile supplies from Quarry Direct Mississauga for over 2 years and have had nothing but great experiences.”</blockquote>
+          <figcaption><b>Mirek</b><span>MIREK Tiles &amp; Bathroom</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Suppliers -->
+  <section class="section suppliers" aria-labelledby="suppliers-title">
+    <div class="wrap">
+      <h2 id="suppliers-title" class="rv">Our Suppliers</h2>
+      <ul class="logos rv" style="--d:.06s">
+        <li><img src="assets/logos/MSI-Tiles-Logo.png" alt="MSI" width="142" height="67" loading="lazy"></li>
+        <li><img src="assets/logos/Midgley-West-Logo.png" alt="Midgley West" width="140" height="64" loading="lazy"></li>
+        <li><img src="assets/logos/Anatolia-Logo.png" alt="Anatolia Tile and Stone" width="140" height="46" loading="lazy"></li>
+        <li><img src="assets/logos/centura.png" alt="Centura" width="148" height="61" loading="lazy"></li>
+        <li><img src="assets/logos/Schluter-System-Logo.png" alt="Schluter Systems" width="122" height="67" loading="lazy"></li>
+        <li><img src="assets/logos/ceratec.svg" alt="Ceratec" width="173" height="40" loading="lazy"></li>
+        <li><img src="assets/logos/aktuell-logo-standard.png" alt="Aktuell" width="118" height="64" loading="lazy"></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section faq" id="faq" aria-labelledby="faq-title">
+    <div class="wrap">
+      <div class="faq-side">
+        <h2 class="h2 rv" id="faq-title">FAQ</h2>
+        <p class="rv" style="--d:.06s">Need assistance? Our experts would love to help clear any doubts (price, durability, etc) in a free consultation.</p>
+        <a class="phone-big rv" style="--d:.1s" href="tel:+19058207300"><i class="ph ph-phone" aria-hidden="true"></i>(905) 820 7300</a>
+      </div>
+      <div class="qas rv">
+        <details class="qa"><summary>How are tiles priced?<i class="ph ph-plus" aria-hidden="true"></i></summary><div class="answer"><div><p>The type of material (natural stone, porcelain, glass or ceramic), finish, country of origin and availability are all determining factors of tile prices.</p></div></div></details>
+        <details class="qa"><summary>What is the difference between natural stone tiles and porcelain tiles?<i class="ph ph-plus" aria-hidden="true"></i></summary><div class="answer"><div><p>Natural stone tiles (i.e. Travertine, Marble and Onyx) are products of the earth with no two tiles being the same. They vary in shade, veining and are porous materials. Porcelain and ceramic products are baked at high temperatures to create a hard dense surface. They are printed to emulate different shades and colours and are non-porous.</p></div></div></details>
+        <details class="qa"><summary>Do I have to seal natural stone?<i class="ph ph-plus" aria-hidden="true"></i></summary><div class="answer"><div><p>Yes, all natural stones have to be sealed, by sealing the stone you are protecting it from any potential products that can cause stains.</p></div></div></details>
+        <details class="qa"><summary>How often do I have to seal my tiles?<i class="ph ph-plus" aria-hidden="true"></i></summary><div class="answer"><div><p>Depending on where the natural stone is installed, on average natural stone tiles have to be sealed once every 5 years. If your tiles are in a high traffic area they should be sealed once every 1-2 years.</p></div></div></details>
+        <details class="qa"><summary>Are there tiles specifically made for walls and floors?<i class="ph ph-plus" aria-hidden="true"></i></summary><div class="answer"><div><p>Yes. Most ceramic, glass and decorative tiles are made for use on walls. Most porcelain and natural stone tiles that are used for floors however can be used for both purposes.</p></div></div></details>
+        <details class="qa"><summary>Do larger format tiles have a greater probability of cracking?<i class="ph ph-plus" aria-hidden="true"></i></summary><div class="answer"><div><p>No. If the installation is done properly then the weight will be evenly distributed over its cement base. It is important that larger format tiles be installed on a floor that is level to ensure that no cracking occurs.</p></div></div></details>
+        <details class="qa"><summary>Why use tiles instead of other types of flooring?<i class="ph ph-plus" aria-hidden="true"></i></summary><div class="answer"><div><p>Tiles are durable and have more longevity than other types of flooring. They are fire and frost resistant, are suitable for a lot of traffic. It is especially true for porcelain where it has a very low moisture ratings and will not stain.</p></div></div></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Visit -->
+  <section class="section visit" id="visit" aria-labelledby="visit-title">
+    <div class="wrap">
+      <h2 class="h2 rv" id="visit-title">Right Here For You</h2>
+      <div class="visit-grid">
+        <div>
+          <div class="visit-intro rv">
+            <p>We're located in the Home &amp; Design Centre, near many local attractions and landmarks, like Erindale Park. So if you're in the neighbourhood of Erin Mills, Meadowvale, Port Credit, Toronto, Brampton, Streetsville or Oakville, drive by and pick the perfect tiles for your home.</p>
+            <p>Our store is easy to spot &amp; there's parking available.</p>
+          </div>
+          <div class="details rv" style="--d:.06s">
+            <div>
+              <h3>Showroom</h3>
+              <address>Mississauga Home &amp; Design Centre<br>2575 Dundas Street West, Unit 16<br>Mississauga, ON L5K 2M6</address>
+              <a class="link" style="display:inline-block;margin-top:10px" href="https://maps.app.goo.gl/by7XKHq4JTzVc5RN7" target="_blank" rel="noopener">Get directions</a>
+            </div>
+            <div>
+              <h3>Working hours</h3>
+              <table class="hours">
+                <tbody>
+                  <tr data-days="1,2,3,4,5"><td>Monday - Friday</td><td>9 am - 5 pm</td></tr>
+                  <tr data-days="6"><td>Saturday</td><td>10 am - 3 pm</td></tr>
+                  <tr data-days="0"><td>Sunday</td><td>Closed</td></tr>
+                </tbody>
+              </table>
+              <p class="open-state" aria-live="polite"></p>
+            </div>
+            <div>
+              <h3>Reach us</h3>
+              <div class="lines">
+                <a href="tel:+19058207300">Tel: 905.820.7300</a>
+                <span>Fax: 905.820.7308</span>
+                <a href="mailto:info@quarrydirect1.com">info@quarrydirect1.com</a>
+              </div>
+            </div>
+            <div>
+              <h3>Follow</h3>
+              <div class="socials">
+                <a href="https://www.facebook.com/quarrydirect1/" target="_blank" rel="noopener" aria-label="Facebook"><i class="ph ph-facebook-logo"></i></a>
+                <a href="https://www.instagram.com/quarrydirectmississauga/" target="_blank" rel="noopener" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+                <a href="http://www.houzz.com/pro/quarrydirect1/quarry-direct-mississauga-inc" target="_blank" rel="noopener" aria-label="Houzz"><i class="ph ph-house-simple"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <form class="form rv" id="request" novalidate style="--d:.1s">
+          <h3>Contact Us Directly for More Information</h3>
+          <p class="assist">Tell us how we can help you accommodate your vision.</p>
+          <div class="req-box">
+            <b>Products you asked about</b>
+            <ul class="req-chips" aria-live="polite"></ul>
+            <p class="req-empty">None yet. Use “Request info” on any tile above, or just write your message.</p>
+          </div>
+          <div class="row2">
+            <div class="field" id="f-name">
+              <label for="name">Name</label>
+              <input id="name" name="name" autocomplete="name" required>
+              <span class="err">Please add your name.</span>
+            </div>
+            <div class="field">
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel">
+              <span class="help">Optional</span>
+            </div>
+          </div>
+          <div class="field" id="f-email">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+            <span class="err">Please add an email we can reply to.</span>
+          </div>
+          <div class="field">
+            <label for="msg">Message</label>
+            <textarea id="msg" name="message"></textarea>
+            <span class="help">Room, sizes and timeline help us help you.</span>
+          </div>
+          <button class="btn btn-primary" type="submit">Send message <i class="ph ph-paper-plane-tilt" aria-hidden="true"></i></button>
+          <p class="form-done" role="status">Your email app should open with this message ready to send to info@quarrydirect1.com. If it doesn't, call us at (905) 820 7300.</p>
+        </form>
+      </div>
+    </div>
+    <div class="map">
+      <iframe title="Map to Quarry Direct, 2575 Dundas Street West, Mississauga" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Quarry+Direct+Mississauga+2575+Dundas+St+W+Unit+16+Mississauga+ON+L5K+2M6&output=embed"></iframe>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="#top"><img src="assets/logo.png" alt="" width="42" height="44"><span><b>Quarry Direct</b><small>Mississauga</small></span></a>
+        <p class="hst"><i class="ph ph-seal-percent" aria-hidden="true"></i>No HSTs. We pay the HST for you!</p>
+        <p>Mississauga Home &amp; Design Centre, 2575 Dundas Street West, Unit 16, Mississauga, ON L5K 2M6</p>
+      </div>
+      <div>
+        <h3>Products</h3>
+        <ul>
+          <li><a href="#products" data-mat="porcelain">Porcelain</a></li>
+          <li><a href="#products" data-mat="subway">Subway Tiles</a></li>
+          <li><a href="#products" data-mat="mosaic">Mosaic</a></li>
+          <li><a href="#products" data-mat="marble">Marbles</a></li>
+          <li><a href="#products" data-mat="travertine">Travertine</a></li>
+          <li><a href="#supplies">Accessories</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Store Info</h3>
+        <ul>
+          <li><a href="#why">About Us</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#reviews">Testimonials</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#visit">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Working hours</h3>
+        <ul>
+          <li><a href="#visit">Mon - Fri: 9 am - 5 pm</a></li>
+          <li><a href="#visit">Saturday: 10 am - 3 pm</a></li>
+          <li><a href="#visit">Sunday: Closed</a></li>
+          <li><a href="tel:+19058207300">(905) 820 7300</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Quarry Direct Mississauga Inc.</span>
+      <span>Sample redesign</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.documentElement.classList.add('js');
+
+/* ---------- Material data (copy from quarrydirect1.com) ---------- */
+const MATERIALS = [
+  { id: 'porcelain', name: 'Porcelain', img: 'assets/cat/porcelain.webp', alt: 'White polished porcelain floor in a bright living room',
+    desc: ['Porcelain tiles come in a wide range of colors, textures, and finishes, including matte, glossy, polished, and textured surfaces. They can be made to mimic the look of natural materials like wood, stone, and marble, or come in solid colors and modern patterns.',
+           'Porcelain tiles are easy to clean and maintain, making them an ideal choice for high-traffic areas, kitchens, bathrooms, and commercial spaces.'],
+    label: 'Suitable for', suits: ['Bathroom Walls & Floors', 'Kitchen Floors, Countertops & Backsplashes', 'Commercial & Outdoor Spaces'],
+    swatchLabel: 'Porcelain tiles by look',
+    sw: ['Wood Look', 'Concrete Look', 'Marble Look', 'Terrazzo Look', 'Deco Tiles', 'Metal Art'] },
+  { id: 'subway', name: 'Subway Tiles', img: 'assets/cat/subway.webp', alt: 'White subway tile kitchen wall with open shelving',
+    desc: ['Subway tiles are rectangular ceramic or porcelain tiles, typically 2″x8″, 3″x6″, 3″x12″, 4″x8″ and 4″x16″, known for their clean, classic look.',
+           'They can be arranged in various layouts, such as herringbone, vertical, or diagonal patterns, offering design flexibility to fit different spaces and personal preferences.'],
+    label: 'Suitable for', suits: ['Bathroom Walls', 'Kitchen Backsplashes', 'Commercial Spaces'],
+    sw: ['Marlow Cloud 3x12', 'Marlow Desert 3x12', 'Marlow Earth 3x12', 'Marlow Smoke 3x12', 'Marlow Tide 3x12', 'Mist Glossy 3x12'] },
+  { id: 'mosaic', name: 'Mosaic', img: 'assets/cat/mosaic.webp', alt: 'White and marble flower-pattern mosaic wall behind ceramic vases',
+    desc: ['Mosaic tiles are small, colorful pieces of material (such as glass, ceramic, stone, or porcelain) that are arranged in patterns or designs to create decorative surfaces. They are commonly used in flooring, walls, and art pieces.',
+           'Mosaic tiles are known for their durability, versatility, and ability to add texture and color to various spaces.'],
+    label: 'Collections', suits: ['Natural Stone Mosaics', 'Porcelain Mosaics & Hexagons', 'Natural Stone Hexagons', 'Marble Mosaic'],
+    sw: ['Angora Basketweave', 'Angora Elongated Octagon', 'Akoya Interlocking', 'Archer Azuro 3x6', 'Archer Bianco 3x6', 'Parke Wooden Grey 1x3'] },
+  { id: 'pebbles', name: 'Pebbles', img: 'assets/cat/pebbles.webp', alt: 'Pebble tile shower floor beside a wood vanity',
+    desc: ['Pebble tiles bring timeless, natural charm to your spaces, and we offer this exquisite option in various colours and patterns.',
+           'Discover the timeless elegance and spa-like touch of pebble tiles.'],
+    label: 'Suitable for', suits: ['Bathroom Walls & Floors', 'Commercial & Residential Flooring', 'Kitchen Backsplashes & Wall Coverings'],
+    sw: ['27 STM 002', '27 STM 010', '27 STM 014', '28 STM 001'] },
+  { id: 'ledgestone', name: 'Ledgestone', img: 'assets/cat/ledgestone.webp', alt: 'Charcoal ledgestone fireplace wall with a linear fire',
+    desc: ['Ledgestone is a type of stone veneer, often used for exterior and interior wall cladding, that features a stacked, textured appearance.',
+           'They add rustic, earthy appeal to fireplaces, accent walls, and outdoor features like garden walls and water features.'],
+    label: 'Suitable for', suits: ['Kitchen Backsplashes', 'Exterior Walls', 'Commercial Spaces'],
+    sw: ['Alaska Gray 3D Honed', 'Alaska Gray Mini Stacked', 'Alaska Gray Multi Finish', 'Alaska Gray Stacked Stone', 'Carrera Split Face 1x2', '3D Stackstone Silver'] },
+  { id: 'travertine', name: 'Travertine', img: 'assets/cat/travertine.webp', alt: 'Light travertine floor through an open-plan living and dining room',
+    desc: ['Travertine is a natural stone. It is a type of limestone with a unique and timeless appeal, characterized by its porous surface, subtle color variations, and natural veining.',
+           'Available in various finishes, such as polished, honed, tumbled, and brushed, travertine can suit both traditional and contemporary designs.'],
+    label: 'Suitable for', suits: ['Bathroom Walls & Floors', 'Commercial & Residential Flooring', 'Outdoor Spaces'],
+    sw: ['Silver Travertine', 'Sunset Travertine Paver', 'Philly Travertine', 'Ivory Pattern Set', 'Galaxy Travertine', 'Durango Cream'] },
+  { id: 'marble', name: 'Marbles', img: 'assets/cat/marble.webp', alt: 'Marble shower with a bench, niche and hexagon mosaic floor',
+    desc: ['Marble tiles are a type of natural stone tile known for their elegant appearance and timeless appeal.',
+           'Marble tiles come in a variety of colors, from classic whites and creams to rich browns, grays, greens, and even blacks, with each tile having distinct veining and patterns, making every installation one-of-a-kind.'],
+    label: 'Suitable for', suits: ['Bathroom Walls & Floors', 'Commercial & Residential Flooring', 'Kitchen Backsplashes & Wall Coverings'],
+    sw: ['Anciano Grigio 12x24', 'Apollo Argento 12x24', 'Aqua Intenso 12x24', 'Aura Fresca 12x24', 'Avario Cream 24x24', 'Avorio Crema 12x24'] },
+  { id: 'vinyl', name: 'Vinyl Floor', img: 'assets/cat/vinyl.webp', alt: 'Light oak-look vinyl plank floor in a modern room',
+    desc: ['Vinyl flooring is a highly versatile, durable, and cost-effective flooring.',
+           'Vinyl is water-resistant or even fully waterproof, making it an excellent choice for kitchens, bathrooms, basements, and high-traffic areas.'],
+    label: 'Suitable for', suits: ['Bathroom Flooring', 'Kitchen Flooring', 'Commercial Spaces'],
+    sw: ['Andover Dakworth', 'Ashton Bergen Hills', 'Ashton Colston Park', 'Ashton Loton Hill', 'Ashton Maracay Brown', 'Ashton York Gray'] },
+  { id: 'onyx', name: 'Onyx', img: 'assets/cat/onyx.webp', alt: 'Four polished onyx slabs in amber, cream and green',
+    desc: ['Onyx is a rare and luxurious natural stone prized for its striking translucency, vivid colors, and dramatic veining.',
+           'Proper sealing and maintenance are essential to preserve its beauty, making it ideal for low-traffic or focal-point applications where its visual richness can truly shine.'],
+    label: 'Suitable for', suits: ['Bathroom Walls & Floors', 'Kitchen Walls, Countertops & Backsplashes', 'Commercial Spaces'],
+    sw: ['Caramel', 'Crema', 'Multi Gold', 'Multi Green', 'White'] },
+  { id: 'medallion', name: 'Medallions', img: 'assets/cat/medallion.webp', alt: 'Black and white compass medallion set into a marble entryway floor',
+    desc: ['Tile medallions are decorative designs made from stone, ceramic, or porcelain tiles arranged in intricate patterns, often placed as a focal point in floors or walls.',
+           'At Quarry Direct we can also make a custom medallion with any design/picture and products you want!'],
+    label: 'Suitable for', suits: ['Bathroom Walls & Floors', 'Entryways', 'Living Rooms & Dining Rooms'],
+    sw: ['Roots Medallion', 'Waterjet Medallion', 'Waterjet Medallion', 'Waterjet Medallion'] }
+];
+
+/* ---------- Request list (carried into the contact form) ---------- */
+const requested = [];
+const reqChips = document.querySelector('.req-chips');
+const reqEmpty = document.querySelector('.req-empty');
+const live = (() => { const d = document.createElement('div'); d.className = 'sr-only'; d.setAttribute('aria-live', 'polite'); document.body.append(d); return d; })();
+
+function syncRequests() {
+  reqChips.innerHTML = '';
+  requested.forEach(item => {
+    const li = document.createElement('li');
+    li.textContent = item;
+    const b = document.createElement('button');
+    b.type = 'button'; b.setAttribute('aria-label', 'Remove ' + item);
+    b.innerHTML = '<i class="ph ph-x" aria-hidden="true"></i>';
+    b.addEventListener('click', () => toggleRequest(item, false));
+    li.append(b); reqChips.append(li);
+  });
+  reqEmpty.hidden = requested.length > 0;
+  document.querySelectorAll('.sw-add').forEach(btn => {
+    const on = requested.includes(btn.dataset.item);
+    btn.setAttribute('aria-pressed', on);
+    btn.querySelector('span').textContent = on ? 'Added' : 'Request info';
+    btn.querySelector('i').className = 'ph ' + (on ? 'ph-check' : 'ph-plus');
+  });
+  const status = document.querySelector('.req-status');
+  if (status) status.innerHTML = requested.length
+    ? `${requested.length} added to your request. <a href="#request">Send it</a>`
+    : '';
+}
+function toggleRequest(item, force) {
+  const i = requested.indexOf(item);
+  const add = force === undefined ? i === -1 : force;
+  if (add && i === -1) requested.push(item);
+  if (!add && i > -1) requested.splice(i, 1);
+  live.textContent = add ? `${item} added to your request.` : `${item} removed from your request.`;
+  syncRequests();
+}
+
+/* ---------- Material browser ---------- */
+const list = document.querySelector('.mat-list');
+const panel = document.getElementById('mat-panel');
+MATERIALS.forEach((m, i) => {
+  const li = document.createElement('li');
+  li.setAttribute('role', 'presentation');
+  li.innerHTML = `<button class="mat-tab" role="tab" id="tab-${m.id}" aria-controls="mat-panel" aria-selected="${i === 0}" tabindex="${i === 0 ? 0 : -1}" data-id="${m.id}">
+      <img src="assets/sw/${m.id}-1.webp" alt="" width="44" height="44" loading="lazy"><span>${m.name}</span><i class="ph ph-arrow-right" aria-hidden="true"></i></button>`;
+  list.append(li);
+});
+const tabs = [...list.querySelectorAll('.mat-tab')];
+
+function renderPanel(m) {
+  panel.setAttribute('aria-labelledby', 'tab-' + m.id);
+  panel.innerHTML = `
+    <div class="mat-top">
+      <figure class="mat-fig"><img src="${m.img}" alt="${m.alt}"></figure>
+      <div class="mat-copy">
+        <h3>${m.name}</h3>
+        <div class="desc">${m.desc.map(p => `<p>${p}</p>`).join('')}</div>
+        <h4>${m.label}</h4>
+        <ul class="suits">${m.suits.map(s => `<li><i class="ph ph-check" aria-hidden="true"></i>${s}</li>`).join('')}</ul>
+        <div class="mat-actions">
+          <button class="btn btn-primary sw-add-main" type="button" data-item="${m.name}">Request info</button>
+          <a class="btn btn-ghost" href="tel:+19058207300"><i class="ph ph-phone" aria-hidden="true"></i>(905) 820 7300</a>
+        </div>
+        <p class="assist">Need assistance? Our experts would love to help clear any doubts (price, durability, etc) in a free consultation.</p>
+      </div>
+    </div>
+    <div class="swatches-head"><h4>${m.swatchLabel || 'In the showroom'}</h4><p class="req-status" aria-live="polite"></p></div>
+    <ul class="swatches">${m.sw.map((n, k) => `
+      <li class="sw">
+        <figure><img src="assets/sw/${m.id}-${k + 1}.webp" alt="${n}" width="360" height="360" loading="lazy"></figure>
+        <span class="sw-name">${n}</span>
+        <button class="sw-add" type="button" aria-pressed="false" data-item="${m.name}: ${n}${m.sw.filter(x => x === n).length > 1 ? ' #' + (k + 1) : ''}"><i class="ph ph-plus" aria-hidden="true"></i><span>Request info</span></button>
+      </li>`).join('')}
+    </ul>`;
+  panel.querySelectorAll('.sw-add').forEach(b => b.addEventListener('click', () => toggleRequest(b.dataset.item)));
+  const main = panel.querySelector('.sw-add-main');
+  const syncMain = () => { main.textContent = requested.includes(main.dataset.item) ? 'Added to your request' : 'Request info'; };
+  main.addEventListener('click', () => { toggleRequest(main.dataset.item); syncMain(); });
+  syncMain();
+  syncRequests();
+}
+
+function selectMaterial(id, { focus = false, animate = true } = {}) {
+  const m = MATERIALS.find(x => x.id === id); if (!m) return;
+  tabs.forEach(t => { const on = t.dataset.id === id; t.setAttribute('aria-selected', on); t.tabIndex = on ? 0 : -1; if (on && focus) t.focus(); });
+  // keep the active chip in view by scrolling the strip only (never the page)
+  const active = tabs.find(t => t.dataset.id === id);
+  if (list.scrollWidth > list.clientWidth) {
+    const li = active.parentElement;
+    list.scrollTo({ left: li.offsetLeft - (list.clientWidth - li.offsetWidth) / 2, behavior: 'smooth' });
+  }
+  renderPanel(m);
+  if (animate && window.gsap && !reduceMotion()) {
+    gsap.fromTo(panel.querySelector('.mat-fig img'), { clipPath: 'inset(0 0 0 100%)', scale: 1.08 }, { clipPath: 'inset(0 0 0 0%)', scale: 1, duration: .8, ease: 'power3.out' });
+    gsap.from(panel.querySelectorAll('.mat-copy > *'), { y: 14, opacity: 0, duration: .5, stagger: .04, ease: 'power2.out' });
+    gsap.from(panel.querySelectorAll('.sw'), { y: 18, opacity: 0, duration: .5, stagger: .045, delay: .1, ease: 'power2.out' });
+  }
+}
+tabs.forEach((t, i) => {
+  t.addEventListener('click', () => selectMaterial(t.dataset.id));
+  t.addEventListener('keydown', e => {
+    const k = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }[e.key];
+    if (k) { e.preventDefault(); selectMaterial(tabs[(i + k + tabs.length) % tabs.length].dataset.id, { focus: true }); }
+  });
+});
+document.querySelectorAll('[data-mat]').forEach(a => a.addEventListener('click', () => selectMaterial(a.dataset.mat)));
+document.querySelectorAll('[data-req]').forEach(a => a.addEventListener('click', () => toggleRequest(a.dataset.req, true)));
+function reduceMotion() { return matchMedia('(prefers-reduced-motion: reduce)').matches; }
+selectMaterial('porcelain', { animate: false });
+
+/* ---------- Mobile menu ---------- */
+const menuBtn = document.querySelector('.menu-btn');
+const mobileNav = document.getElementById('mobile-nav');
+menuBtn.addEventListener('click', () => {
+  const open = menuBtn.getAttribute('aria-expanded') !== 'true';
+  menuBtn.setAttribute('aria-expanded', open);
+  menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  menuBtn.innerHTML = `<i class="ph ${open ? 'ph-x' : 'ph-list'}" aria-hidden="true"></i>`;
+  mobileNav.classList.toggle('open', open);
+});
+mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { if (mobileNav.classList.contains('open')) menuBtn.click(); }));
+
+/* ---------- FAQ accordion (animated open/close) ---------- */
+document.querySelectorAll('.qa').forEach(d => {
+  const s = d.querySelector('summary');
+  s.addEventListener('click', e => {
+    e.preventDefault();
+    if (d.open) {
+      d.classList.remove('is-open');
+      setTimeout(() => { d.open = false; }, reduceMotion() ? 0 : 420);
+    } else {
+      d.open = true;
+      requestAnimationFrame(() => d.classList.add('is-open'));
+    }
+  });
+});
+
+/* ---------- Hours: today + open now (Mississauga time) ---------- */
+(function hours() {
+  const parts = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Toronto', weekday: 'short', hour: 'numeric', minute: 'numeric', hour12: false }).formatToParts(new Date());
+  const get = t => parts.find(p => p.type === t)?.value;
+  const day = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(get('weekday'));
+  const mins = (+get('hour') % 24) * 60 + +get('minute');
+  const sched = { 0: null, 1: [540, 1020], 2: [540, 1020], 3: [540, 1020], 4: [540, 1020], 5: [540, 1020], 6: [600, 900] };
+  document.querySelectorAll('.hours tr').forEach(tr => { if (tr.dataset.days.split(',').map(Number).includes(day)) tr.classList.add('today'); });
+  const fmt = m => { const h = Math.floor(m / 60), mm = m % 60; return `${h % 12 || 12}${mm ? ':' + String(mm).padStart(2, '0') : ''} ${h < 12 ? 'am' : 'pm'}`; };
+  const names = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  const el = document.querySelector('.open-state');
+  const t = sched[day];
+  if (t && mins >= t[0] && mins < t[1]) {
+    el.className = 'open-state is-open';
+    el.innerHTML = `<i class="ph-fill ph-check-circle" aria-hidden="true"></i>Open now, until ${fmt(t[1])}`;
+  } else {
+    let d = day, first = true;
+    for (let k = 0; k < 8; k++) {
+      const s = sched[d];
+      if (s && (!first || mins < s[0])) break;
+      d = (d + 1) % 7; first = false;
+    }
+    const when = d === day ? 'today' : (d === (day + 1) % 7 ? 'tomorrow' : names[d]);
+    el.className = 'open-state is-closed';
+    el.innerHTML = `<i class="ph ph-clock" aria-hidden="true"></i>Closed now. Opens ${when} at ${fmt(sched[d][0])}`;
+  }
+})();
+
+/* ---------- Contact form -> email ---------- */
+document.getElementById('request').addEventListener('submit', e => {
+  e.preventDefault();
+  const f = e.currentTarget;
+  let ok = true;
+  [['f-name', f.name.value.trim().length > 0], ['f-email', /.+@.+\..+/.test(f.email.value.trim())]].forEach(([id, valid]) => {
+    document.getElementById(id).classList.toggle('invalid', !valid); if (!valid) ok = false;
+  });
+  if (!ok) { f.querySelector('.invalid input').focus(); return; }
+  const body = [
+    f.message.value.trim(),
+    requested.length ? '\nProducts I asked about:\n- ' + requested.join('\n- ') : '',
+    `\n${f.name.value.trim()}`, f.phone.value.trim(), f.email.value.trim()
+  ].filter(Boolean).join('\n');
+  location.href = `mailto:info@quarrydirect1.com?subject=${encodeURIComponent('Request info from ' + f.name.value.trim())}&body=${encodeURIComponent(body)}`;
+  f.querySelector('.form-done').classList.add('show');
+});
+
+/* ---------- Reveal on scroll ---------- */
+const io = new IntersectionObserver(entries => entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } }), { rootMargin: '0px 0px -8% 0px', threshold: .08 });
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+/* ---------- Header border once scrolled ---------- */
+const sentinel = document.createElement('div');
+sentinel.style.cssText = 'position:absolute;top:120px;height:1px;width:1px;pointer-events:none';
+document.body.prepend(sentinel);
+new IntersectionObserver(([e]) => document.querySelector('.site-header').classList.toggle('scrolled', !e.isIntersecting)).observe(sentinel);
+
+/* ---------- Why Quarry: active point (no-GSAP fallback) ---------- */
+const whyItems = [...document.querySelectorAll('.why-item')];
+const whyImgs = [...document.querySelectorAll('.why-media img')];
+let whyActive = 0, whyZ = 1;
+function setWhy(i) {
+  if (i === whyActive) return;
+  whyItems.forEach((el, k) => el.classList.toggle('active', k === i));
+  const img = whyImgs[i];
+  whyZ += 1; img.style.zIndex = whyZ;
+  if (window.gsap && !reduceMotion()) {
+    gsap.fromTo(img, { clipPath: i > whyActive ? 'inset(100% 0 0 0)' : 'inset(0 0 100% 0)', scale: 1.08 }, { clipPath: 'inset(0% 0 0% 0)', scale: 1, duration: 1, ease: 'power3.inOut' });
+  } else {
+    img.style.clipPath = 'inset(0 0 0 0)';
+  }
+  whyActive = i;
+}
+const whyIO = new IntersectionObserver(entries => {
+  entries.forEach(en => { if (en.isIntersecting) setWhy(whyItems.indexOf(en.target)); });
+}, { rootMargin: '-45% 0px -45% 0px' });
+whyItems.forEach(el => whyIO.observe(el));
+
+/* ---------- GSAP: hero tile laying + scroll motion ---------- */
+window.addEventListener('DOMContentLoaded', () => {
+  const panelKids = document.querySelectorAll('.hero-panel > *');
+  if (!window.gsap || reduceMotion()) { panelKids.forEach(el => { el.style.opacity = 1; el.style.transform = 'none'; }); return; }
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Hero: the photo is laid tile by tile, grout lines close up at the end
+  const media = document.querySelector('.hero-media');
+  const photo = media.querySelector('img');
+  const layer = media.querySelector('.hero-tiles');
+  const runTiles = () => {
+    const w = media.clientWidth, h = media.clientHeight;
+    const target = w < 700 ? 74 : 132;
+    const cols = Math.max(4, Math.round(w / target)), rows = Math.max(3, Math.round(h / target));
+    const cw = w / cols, ch = h / rows, g = 3;
+    const nw = photo.naturalWidth || 1600, nh = photo.naturalHeight || 1334;
+    const s = Math.max(w / nw, h / nh), bw = nw * s, bh = nh * s;
+    const ox = (w - bw) * .5, oy = (h - bh) * .62;
+    const frag = document.createDocumentFragment();
+    const cells = [];
+    for (let r = 0; r < rows; r++) for (let c = 0; c < cols; c++) {
+      const el = document.createElement('span');
+      const x = c * cw, y = r * ch;
+      el.style.cssText = `left:${x + g / 2}px;top:${y + g / 2}px;width:${cw - g}px;height:${ch - g}px;background-image:url(${photo.currentSrc || photo.src});background-size:${bw}px ${bh}px;background-position:${ox - x - g / 2}px ${oy - y - g / 2}px`;
+      frag.append(el); cells.push(el);
+    }
+    layer.append(frag);
+    gsap.set(photo, { autoAlpha: 0 });
+    const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+    tl.from(cells, { autoAlpha: 0, scale: .55, duration: .7, stagger: { grid: [rows, cols], from: [0, 1], amount: 1.15 } }, 0)
+      .to(photo, { autoAlpha: 1, duration: .5, ease: 'none' }, '-=.15')
+      .add(() => layer.replaceChildren())
+      .to(panelKids, { autoAlpha: 1, y: 0, duration: .9, stagger: .09 }, .25);
+  };
+  (photo.decode ? photo.decode() : Promise.resolve()).then(runTiles, runTiles);
+
+  // Gentle settle of the hero photo as it scrolls away
+  gsap.fromTo(photo, { scale: 1.06 }, { scale: 1, ease: 'none', scrollTrigger: { trigger: media, start: 'top top', end: 'bottom top', scrub: true } });
+
+  // Projects: the three columns drift at different speeds (desktop only)
+  const mm = gsap.matchMedia();
+  mm.add('(min-width: 761px)', () => {
+    document.querySelectorAll('.masonry .col').forEach(col => {
+      const sp = parseFloat(col.dataset.speed) || 0;
+      gsap.fromTo(col, { y: 70 * sp }, { y: -70 * sp, ease: 'none', scrollTrigger: { trigger: '.masonry', start: 'top bottom', end: 'bottom top', scrub: true } });
+    });
+    document.querySelectorAll('.masonry figure').forEach(f => {
+      gsap.from(f, { autoAlpha: 0, y: 40, duration: 1, ease: 'power3.out', scrollTrigger: { trigger: f, start: 'top 92%' } });
+    });
+  });
+});
+</script>
+</body>
+</html>
