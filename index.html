@@ -9,9 +9,9 @@
 <meta name="theme-color" content="#121214" media="(prefers-color-scheme: dark)">
 <meta property="og:title" content="Quarry Direct | Floor &amp; Wall Tile Store Mississauga">
 <meta property="og:description" content="Your go-to tile store in Mississauga since 2009.">
-<meta property="og:image" content="assets/hero.webp">
+<meta property="og:image" content="assets/hero/h1.webp">
 <link rel="icon" href="assets/favicon.png">
-<link rel="preload" as="image" href="assets/hero.webp" fetchpriority="high">
+<link rel="preload" as="image" href="assets/hero/h1.webp" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
@@ -192,7 +192,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 /* ---------- Hero ---------- */
 .hero { position: relative; }
 .hero-media {
-  position: relative; overflow: hidden; background: var(--surface-2);
+  position: relative; overflow: hidden; background: var(--bg); /* shows through as grout between tiles */
   height: clamp(560px, calc(100svh - var(--header-h) - 38px), 920px);
 }
 .hero-media > img {
@@ -200,7 +200,9 @@ ul { margin: 0; padding: 0; list-style: none; }
   transform-origin: 50% 70%;
 }
 .hero-tiles { position: absolute; inset: 0; pointer-events: none; }
-.hero-tiles span { position: absolute; background-repeat: no-repeat; will-change: transform, opacity; }
+.hero-tiles .t { position: absolute; transform-style: preserve-3d; will-change: transform; }
+.hero-tiles i { position: absolute; inset: 0; background-repeat: no-repeat; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
+.hero-tiles i.b { transform: rotateY(180deg); }
 .hero-panel {
   position: absolute; left: 0; bottom: 0; z-index: 2;
   width: min(700px, 56%);
@@ -252,19 +254,31 @@ ul { margin: 0; padding: 0; list-style: none; }
 .products { padding-top: 0; }
 .products-head { display: flex; flex-direction: column; gap: 16px; margin-bottom: clamp(32px, 4vw, 52px); }
 .browser { display: grid; grid-template-columns: 280px minmax(0, 1fr); gap: clamp(24px, 3vw, 48px); align-items: start; }
-.mat-list { display: flex; flex-direction: column; border-top: 1px solid var(--line); position: sticky; top: calc(var(--header-h) + 24px); }
-.mat-tab {
-  display: grid; grid-template-columns: 44px 1fr auto; align-items: center; gap: 14px;
-  width: 100%; padding: 10px 0; border: 0; border-bottom: 1px solid var(--line); background: none;
-  text-align: left; cursor: pointer; font-weight: 700; font-size: 16px; color: var(--ink-2); position: relative;
+/* The list is as tall as the picture beside it and scrolls inside itself */
+.mat-list {
+  display: flex; flex-direction: column; border-top: 1px solid var(--line);
+  position: sticky; top: calc(var(--header-h) + 24px);
+  max-height: min(var(--list-h, 520px), calc(100svh - var(--header-h) - 48px));
+  overflow-y: auto; overscroll-behavior: contain;
+  scrollbar-width: thin; scrollbar-color: var(--line) transparent;
 }
-.mat-tab img { width: 44px; height: 44px; object-fit: cover; filter: grayscale(.6); transition: filter .3s; }
+.mat-list::-webkit-scrollbar { width: 6px; }
+.mat-list::-webkit-scrollbar-thumb { background: var(--line); }
+.mat-list.fade-end { -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 64px), transparent); mask-image: linear-gradient(to bottom, #000 calc(100% - 64px), transparent); }
+.mat-list.fade-start { -webkit-mask-image: linear-gradient(to bottom, transparent, #000 48px); mask-image: linear-gradient(to bottom, transparent, #000 48px); }
+.mat-list.fade-start.fade-end { -webkit-mask-image: linear-gradient(to bottom, transparent, #000 48px, #000 calc(100% - 64px), transparent); mask-image: linear-gradient(to bottom, transparent, #000 48px, #000 calc(100% - 64px), transparent); }
+.mat-tab {
+  display: grid; grid-template-columns: 36px 1fr auto; align-items: center; gap: 12px;
+  width: 100%; padding: 7px 10px 7px 14px; border: 0; border-bottom: 1px solid var(--line); background: none;
+  text-align: left; cursor: pointer; font-weight: 700; font-size: 15.5px; color: var(--ink-2); position: relative;
+}
+.mat-tab img { width: 36px; height: 36px; object-fit: cover; filter: grayscale(.6); transition: filter .3s; }
 .mat-tab i { color: var(--muted); opacity: 0; transform: translateX(-6px); transition: .3s var(--ease); }
 .mat-tab:hover { color: var(--ink); }
 .mat-tab:hover img, .mat-tab[aria-selected="true"] img { filter: none; }
 .mat-tab[aria-selected="true"] { color: var(--ink); font-weight: 900; }
 .mat-tab[aria-selected="true"] i { opacity: 1; transform: none; color: var(--accent-text); }
-.mat-tab::before { content: ""; position: absolute; left: -14px; top: 10px; bottom: 10px; width: 3px; background: var(--accent); transform: scaleY(0); transition: transform .35s var(--ease); }
+.mat-tab::before { content: ""; position: absolute; left: 0; top: 8px; bottom: 8px; width: 3px; background: var(--accent); transform: scaleY(0); transition: transform .35s var(--ease); }
 .mat-tab[aria-selected="true"]::before { transform: scaleY(1); }
 
 .mat-panel { min-width: 0; }
@@ -304,10 +318,13 @@ ul { margin: 0; padding: 0; list-style: none; }
 @media (max-width: 900px) {
   .browser { grid-template-columns: 1fr; }
   .mat-list {
-    position: static; flex-direction: row; overflow-x: auto; gap: 8px; border: 0;
+    position: relative; top: auto; max-height: none; overflow-y: visible; flex-direction: row; overflow-x: auto; gap: 8px; border: 0;
     scroll-snap-type: x proximity; scrollbar-width: none; margin-inline: calc(var(--gutter) * -1); padding-inline: var(--gutter);
   }
   .mat-list::-webkit-scrollbar { display: none; }
+  .mat-list.fade-end { -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 56px), transparent); mask-image: linear-gradient(to right, #000 calc(100% - 56px), transparent); }
+  .mat-list.fade-start { -webkit-mask-image: linear-gradient(to right, transparent, #000 40px); mask-image: linear-gradient(to right, transparent, #000 40px); }
+  .mat-list.fade-start.fade-end { -webkit-mask-image: linear-gradient(to right, transparent, #000 40px, #000 calc(100% - 56px), transparent); mask-image: linear-gradient(to right, transparent, #000 40px, #000 calc(100% - 56px), transparent); }
   .mat-list li { flex: 0 0 auto; scroll-snap-align: start; }
   .mat-tab { grid-template-columns: 30px auto; gap: 10px; padding: 7px 14px 7px 7px; border: 1px solid var(--line); font-size: 15px; }
   .mat-tab img { width: 30px; height: 30px; }
@@ -588,7 +605,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   <!-- Hero -->
   <section class="hero" aria-labelledby="hero-title">
     <div class="hero-media">
-      <img src="assets/hero.webp" alt="Terrazzo-look porcelain laid in a black and cream checkerboard through an arched hallway" width="1600" height="1334" fetchpriority="high">
+      <img src="assets/hero/h1.webp" alt="Terrazzo-look porcelain laid in a black and cream checkerboard through an arched hallway" width="1600" height="1334" fetchpriority="high">
       <div class="hero-tiles" aria-hidden="true"></div>
     </div>
     <div class="hero-panel">
@@ -1181,13 +1198,13 @@ function renderPanel(m) {
 function selectMaterial(id, { focus = false, animate = true } = {}) {
   const m = MATERIALS.find(x => x.id === id); if (!m) return;
   tabs.forEach(t => { const on = t.dataset.id === id; t.setAttribute('aria-selected', on); t.tabIndex = on ? 0 : -1; if (on && focus) t.focus(); });
-  // keep the active chip in view by scrolling the strip only (never the page)
-  const active = tabs.find(t => t.dataset.id === id);
-  if (list.scrollWidth > list.clientWidth) {
-    const li = active.parentElement;
-    list.scrollTo({ left: li.offsetLeft - (list.clientWidth - li.offsetWidth) / 2, behavior: 'smooth' });
-  }
   renderPanel(m);
+  syncList();
+  // keep the active option in view by scrolling the list only (never the page)
+  const li = tabs.find(t => t.dataset.id === id).parentElement;
+  const smooth = reduceMotion() ? 'auto' : 'smooth';
+  if (list.scrollWidth > list.clientWidth + 2) list.scrollTo({ left: li.offsetLeft - (list.clientWidth - li.offsetWidth) / 2, behavior: smooth });
+  else if (list.scrollHeight > list.clientHeight + 2) list.scrollTo({ top: li.offsetTop - (list.clientHeight - li.offsetHeight) / 2, behavior: smooth });
   if (animate && window.gsap && !reduceMotion()) {
     gsap.fromTo(panel.querySelector('.mat-fig img'), { clipPath: 'inset(0 0 0 100%)', scale: 1.08 }, { clipPath: 'inset(0 0 0 0%)', scale: 1, duration: .8, ease: 'power3.out' });
     gsap.from(panel.querySelectorAll('.mat-copy > *'), { y: 14, opacity: 0, duration: .5, stagger: .04, ease: 'power2.out' });
@@ -1204,6 +1221,23 @@ tabs.forEach((t, i) => {
 document.querySelectorAll('[data-mat]').forEach(a => a.addEventListener('click', () => selectMaterial(a.dataset.mat)));
 document.querySelectorAll('[data-req]').forEach(a => a.addEventListener('click', () => toggleRequest(a.dataset.req, true)));
 function reduceMotion() { return matchMedia('(prefers-reduced-motion: reduce)').matches; }
+
+// Match the list's height to the picture, and fade whichever end has more options hidden
+function listFades() {
+  const horiz = list.scrollWidth > list.clientWidth + 2;
+  const pos = horiz ? list.scrollLeft : list.scrollTop;
+  const max = horiz ? list.scrollWidth - list.clientWidth : list.scrollHeight - list.clientHeight;
+  list.classList.toggle('fade-start', max > 2 && pos > 4);
+  list.classList.toggle('fade-end', max > 2 && pos < max - 4);
+}
+function syncList() {
+  const fig = panel.querySelector('.mat-fig');
+  if (fig && matchMedia('(min-width: 901px)').matches) list.style.setProperty('--list-h', fig.offsetHeight + 'px');
+  else list.style.removeProperty('--list-h');
+  listFades();
+}
+list.addEventListener('scroll', listFades, { passive: true });
+new ResizeObserver(syncList).observe(panel);
 selectMaterial('porcelain', { animate: false });
 
 /* ---------- Mobile menu ---------- */
@@ -1316,38 +1350,97 @@ window.addEventListener('DOMContentLoaded', () => {
   if (!window.gsap || reduceMotion()) { panelKids.forEach(el => { el.style.opacity = 1; el.style.transform = 'none'; }); return; }
   gsap.registerPlugin(ScrollTrigger);
 
-  // Hero: the photo is laid tile by tile, grout lines close up at the end
+  // Hero: photos are shown as tiles. The first is laid in from the corner, then every few
+  // seconds the tiles flip over in a left-to-right wave to reveal the next photo.
   const media = document.querySelector('.hero-media');
   const photo = media.querySelector('img');
   const layer = media.querySelector('.hero-tiles');
-  const runTiles = () => {
-    const w = media.clientWidth, h = media.clientHeight;
-    const target = w < 700 ? 74 : 132;
-    const cols = Math.max(4, Math.round(w / target)), rows = Math.max(3, Math.round(h / target));
-    const cw = w / cols, ch = h / rows, g = 3;
-    const nw = photo.naturalWidth || 1600, nh = photo.naturalHeight || 1334;
-    const s = Math.max(w / nw, h / nh), bw = nw * s, bh = nh * s;
-    const ox = (w - bw) * .5, oy = (h - bh) * .62;
+  const HERO = [
+    { src: 'assets/hero/h1.webp', fx: .5, fy: .62 },  // terrazzo-look checkerboard hallway
+    { src: 'assets/hero/h2.webp', fx: .5, fy: .62 },  // porcelain slabs, lounge
+    { src: 'assets/hero/h3.webp', fx: .5, fy: .5 },   // marble flower mosaic
+    { src: 'assets/hero/h4.webp', fx: .5, fy: .42 }   // glossy blue subway tile
+  ];
+  const HOLD = 4.2;               // seconds each photo rests before the next wave
+  const loadImg = h => new Promise(res => {
+    const im = new Image();
+    im.onload = () => { h.w = im.naturalWidth; h.h = im.naturalHeight; h.ok = true; (im.decode ? im.decode() : Promise.resolve()).then(() => res(h), () => res(h)); };
+    im.onerror = () => res(h);
+    im.src = h.src;
+  });
+  let tiles = [], grid = null, cur = 0, rot = 0, faceA = true, flipping = false, inView = true, timer = null;
+
+  function paint(face, h) {
+    const { w, hgt } = grid;
+    const sc = Math.max(w / h.w, hgt / h.h), bw = h.w * sc, bh = h.h * sc;
+    const ox = (w - bw) * h.fx, oy = (hgt - bh) * h.fy;
+    tiles.forEach(t => {
+      const f = t.children[face === 'a' ? 0 : 1];
+      f.style.backgroundImage = `url(${h.src})`;
+      f.style.backgroundSize = `${bw}px ${bh}px`;
+      f.style.backgroundPosition = `${ox - t._x}px ${oy - t._y}px`;
+    });
+  }
+  function build() {
+    layer.replaceChildren(); tiles = [];
+    const w = media.clientWidth, hgt = media.clientHeight;
+    const target = w < 700 ? 78 : 136, g = 3;
+    const cols = Math.max(4, Math.round(w / target)), rows = Math.max(3, Math.round(hgt / target));
+    const cw = w / cols, ch = hgt / rows;
+    grid = { w, hgt, cols, rows };
     const frag = document.createDocumentFragment();
-    const cells = [];
     for (let r = 0; r < rows; r++) for (let c = 0; c < cols; c++) {
-      const el = document.createElement('span');
-      const x = c * cw, y = r * ch;
-      el.style.cssText = `left:${x + g / 2}px;top:${y + g / 2}px;width:${cw - g}px;height:${ch - g}px;background-image:url(${photo.currentSrc || photo.src});background-size:${bw}px ${bh}px;background-position:${ox - x - g / 2}px ${oy - y - g / 2}px`;
-      frag.append(el); cells.push(el);
+      const t = document.createElement('span');
+      t.className = 't';
+      t._x = c * cw + g / 2; t._y = r * ch + g / 2; t._c = c; t._r = r;
+      t.style.cssText = `left:${t._x}px;top:${t._y}px;width:${cw - g}px;height:${ch - g}px`;
+      t.innerHTML = '<i class="a"></i><i class="b"></i>';
+      frag.append(t); tiles.push(t);
     }
     layer.append(frag);
-    gsap.set(photo, { autoAlpha: 0 });
-    const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
-    tl.from(cells, { autoAlpha: 0, scale: .55, duration: .7, stagger: { grid: [rows, cols], from: [0, 1], amount: 1.15 } }, 0)
-      .to(photo, { autoAlpha: 1, duration: .5, ease: 'none' }, '-=.15')
-      .add(() => layer.replaceChildren())
-      .to(panelKids, { autoAlpha: 1, y: 0, duration: .9, stagger: .09 }, .25);
-  };
-  (photo.decode ? photo.decode() : Promise.resolve()).then(runTiles, runTiles);
+    gsap.set(tiles, { transformPerspective: 900 });
+    rot = 0; faceA = true;
+    paint('a', HERO[cur]);
+  }
+  // left to right, with a slight lean down each column so the wave reads as a sweep
+  const wave = (i, t) => t._c * .075 + t._r * .03;
+  function schedule() { if (timer) timer.kill(); timer = gsap.delayedCall(HOLD, flip); }
+  function flip() {
+    if (flipping) return;
+    if (!inView || document.hidden) { schedule(); return; }
+    let next = (cur + 1) % HERO.length;
+    while (!HERO[next].ok && next !== cur) next = (next + 1) % HERO.length;
+    if (next === cur) { schedule(); return; }
+    flipping = true;
+    paint(faceA ? 'b' : 'a', HERO[next]);   // draw the next photo on the hidden side
+    rot += 180;
+    gsap.timeline({ onComplete: () => { cur = next; faceA = !faceA; flipping = false; schedule(); } })
+      .to(tiles, { rotationY: rot, duration: 1.1, ease: 'power3.inOut', stagger: wave }, 0)
+      .to(tiles, { scale: .86, duration: .5, ease: 'power2.out', stagger: wave }, 0)
+      .to(tiles, { scale: 1, duration: .6, ease: 'power2.inOut', stagger: wave }, .5);
+  }
 
-  // Gentle settle of the hero photo as it scrolls away
-  gsap.fromTo(photo, { scale: 1.06 }, { scale: 1, ease: 'none', scrollTrigger: { trigger: media, start: 'top top', end: 'bottom top', scrub: true } });
+  loadImg(HERO[0]).then(() => {
+    if (!HERO[0].ok) { gsap.set(panelKids, { autoAlpha: 1, y: 0 }); return; }
+    build();
+    gsap.set(photo, { opacity: 0 });      // stays in the page for screen readers and no-JS
+    gsap.timeline({ defaults: { ease: 'power3.out' } })
+      .from(tiles, { autoAlpha: 0, scale: .55, duration: .7, stagger: { grid: [grid.rows, grid.cols], from: [0, 1], amount: 1.15 } }, 0)
+      .to(panelKids, { autoAlpha: 1, y: 0, duration: .9, stagger: .09 }, .25)
+      .add(() => Promise.all(HERO.slice(1).map(loadImg)).then(schedule));
+
+    new IntersectionObserver(([e]) => { inView = e.isIntersecting; }).observe(media);
+    let lastW = media.clientWidth, lastH = media.clientHeight, rz;
+    new ResizeObserver(() => {
+      if (media.clientWidth === lastW && Math.abs(media.clientHeight - lastH) < 2) return;
+      lastW = media.clientWidth; lastH = media.clientHeight;
+      clearTimeout(rz);
+      rz = setTimeout(() => { gsap.killTweensOf(tiles); flipping = false; build(); schedule(); }, 180);
+    }).observe(media);
+  });
+
+  // Gentle settle of the hero as it scrolls away
+  gsap.fromTo(layer, { scale: 1.04 }, { scale: 1, ease: 'none', scrollTrigger: { trigger: media, start: 'top top', end: 'bottom top', scrub: true } });
 
   // Projects: the three columns drift at different speeds (desktop only)
   const mm = gsap.matchMedia();
