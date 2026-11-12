@@ -85,7 +85,7 @@
 
 /* ---------- Base ---------- */
 *, *::before, *::after { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; scroll-padding-top: calc(var(--header-h) + 16px); }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; scroll-padding-top: calc(var(--header-h) + 16px); }
 body {
   margin: 0;
   background: var(--bg);
@@ -557,7 +557,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
-<div class="utility">
+<div class="utility" id="top">
   <div class="wrap">
     <p><i class="ph ph-seal-percent" aria-hidden="true"></i><span>No HSTs. We pay the HST for you!</span></p>
     <div class="u-right">
@@ -567,7 +567,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   </div>
 </div>
 
-<header class="site-header" id="top">
+<header class="site-header">
   <div class="wrap">
     <a class="brand" href="#top" aria-label="Quarry Direct Mississauga, home">
       <img src="assets/logo.png" alt="" width="42" height="44">
